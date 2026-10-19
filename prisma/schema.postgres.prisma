@@ -1,0 +1,391 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================================
+// NEXTAUTH & INVITE-ONLY ADMISSION MODELS
+// ============================================================================
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model PasswordCredential {
+  id                String    @id @default(cuid())
+  userId            String    @unique
+  passwordHash      String
+  passwordChangedAt DateTime  @default(now())
+  resetTokenHash    String?   @unique
+  resetExpiresAt    DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([resetExpiresAt])
+}
+
+model PendingRegistration {
+  id              String   @id @default(cuid())
+  email           String
+  normalizedEmail String   @unique
+  name            String?
+  passwordHash    String
+  tokenHash       String   @unique
+  expiresAt       DateTime
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([expiresAt])
+}
+
+model AccountInvitation {
+  id              String    @id @default(cuid())
+  email           String
+  normalizedEmail String
+  activeForEmail  String?   @unique
+  tokenHash       String?   @unique
+  role            String    @default("Editor")
+  status          String    @default("PENDING")
+  workspaceId     String?
+  invitedById     String?
+  acceptedById    String?
+  expiresAt       DateTime
+  acceptedAt      DateTime?
+  revokedAt       DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @default(now()) @updatedAt
+
+  invitedBy  User?                @relation("AccountInvitationInviter", fields: [invitedById], references: [id], onDelete: SetNull)
+  acceptedBy User?                @relation("AccountInvitationAcceptor", fields: [acceptedById], references: [id], onDelete: SetNull)
+  emails     AccountEmailOutbox[]
+
+  @@index([status, expiresAt])
+  @@index([normalizedEmail, createdAt])
+  @@index([invitedById])
+  @@index([acceptedById])
+}
+
+model AccountEmailOutbox {
+  id            String    @id @default(cuid())
+  payload       String
+  status        String    @default("pending")
+  claimToken    String?
+  lastAttemptAt DateTime?
+  lastError     String?
+  sentAt        DateTime?
+  expiresAt     DateTime
+  createdAt     DateTime  @default(now())
+  invitationId  String?
+
+  invitation AccountInvitation? @relation(fields: [invitationId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([invitationId])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  workspaceId  String?
+  actorId      String?
+  actorEmail   String   @default("system")
+  action       String
+  targetType   String   @default("system")
+  targetId     String?
+  metadataJson String   @default("{}")
+  ipAddress    String?
+  createdAt    DateTime @default(now())
+
+  @@index([action, createdAt])
+  @@index([actorEmail, createdAt])
+  @@index([workspaceId, createdAt])
+}
+
+// ============================================================================
+// USER & WORKSPACE MODELS
+// ============================================================================
+
+model User {
+  id                    String    @id @default(cuid())
+  email                 String    @unique
+  emailVerified         DateTime?
+  name                  String    @default("Joshuah Powlowski")
+  firstName             String    @default("Joshuah")
+  lastName              String    @default("Powlowski")
+  handle                String?   @unique
+  billingEmail          String?
+  image                 String?
+  role                  String    @default("Admin")
+  status                String    @default("active")
+  sessionVersion        Int       @default(1)
+  passwordHash          String?
+  streakDays            Int       @default(4)
+  tokensUsed            Int       @default(12840)
+  connectedAccountsJson String    @default("{\"linkedin\":false,\"github\":true,\"figma\":true}")
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  accounts                   Account[]
+  sessions                   Session[]
+  passwordCredential         PasswordCredential?
+  accountInvitationsSent     AccountInvitation[] @relation("AccountInvitationInviter")
+  accountInvitationsAccepted AccountInvitation[] @relation("AccountInvitationAcceptor")
+  memberships                WorkspaceMember[]
+  createdProjects            DesignProject[]
+  createdCanvases            CanvasProject[]
+  createdDesignSystems       DesignSystem[]
+}
+
+model Workspace {
+  id                           String   @id @default(cuid())
+  name                         String   @default("Joshuah's Workspace")
+  slug                         String   @unique
+  logoUrl                      String?
+  logoColor                    String   @default("#16A34A")
+  planTier                     String   @default("FREE")
+  billingInterval              String   @default("monthly")
+  shareNewDesignsWithWorkspace Boolean  @default(true)
+  ssoEnabled                   Boolean  @default(false)
+  ssoDomain                    String   @default("")
+  rolledOverCredits            Int      @default(0)
+  monthlyCreditsUsed           Int      @default(0)
+  monthlyCreditsQuota          Int      @default(0)
+  freeCreditsUsed              Int      @default(15)
+  freeCreditsQuota             Int      @default(100)
+  giftedCredits                Int      @default(0)
+  purchasedCredits             Int      @default(0)
+  paymentMethodJson            String   @default("{\"brand\":\"\",\"last4\":\"\",\"expMonth\":\"\",\"expYear\":\"\"}")
+  invoicesJson                 String   @default("[]")
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+
+  members            WorkspaceMember[]
+  folders            Folder[]
+  designSystems      DesignSystem[]
+  projects           DesignProject[]
+  canvases           CanvasProject[]
+  integrationKeys    WorkspaceIntegrationKey[]
+  connectors         McpConnector[]
+  skills             AiSkill[]
+  apiKeys            WorkspaceApiKey[]
+  creditTransactions CreditTransaction[]
+}
+
+model WorkspaceMember {
+  id           String   @id @default(cuid())
+  workspaceId  String
+  userId       String
+  role         String   @default("Admin")
+  plan         String   @default("Free")
+  lastActiveAt DateTime @default(now())
+  joinedAt     DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+}
+
+model Folder {
+  id          String   @id @default(cuid())
+  workspaceId String
+  name        String
+  color       String   @default("#4F46E5")
+  createdById String?
+  createdAt   DateTime @default(now())
+
+  workspace Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  projects  DesignProject[]
+}
+
+// ============================================================================
+// DESIGN SYSTEMS, DESIGN PROJECTS & MAGICOS CANVAS
+// ============================================================================
+
+model DesignSystem {
+  id             String   @id @default(cuid())
+  workspaceId    String
+  createdById    String
+  name           String
+  description    String   @default("Define the rules, colors, typography, and components used in your designs.")
+  logoUrl        String?
+  sourceType     String   @default("preset")
+  sourceUrl      String?
+  presetKey      String   @default("shadcn")
+  isDefault      Boolean  @default(false)
+  colorsJson     String   @default("{}")
+  typographyJson String   @default("{}")
+  radius         String   @default("0.5rem")
+  customCss      String   @default("")
+  componentsJson String   @default("[]")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  workspace Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  createdBy User            @relation(fields: [createdById], references: [id], onDelete: Cascade)
+  projects  DesignProject[]
+}
+
+model DesignProject {
+  id                String   @id @default(cuid())
+  shareSlug         String   @unique @default(cuid())
+  workspaceId       String
+  folderId          String?
+  designSystemId    String?
+  createdById       String
+  name              String   @default("Untitled Design")
+  prompt            String
+  type              String   @default("DESIGN")
+  model             String   @default("Auto")
+  status            String   @default("READY")
+  visibility        String   @default("WORKSPACE")
+  workspaceAccess   String   @default("Editor")
+  publicPermission  String   @default("PREVIEW_ONLY")
+  isTemplate        Boolean  @default(false)
+  isFavorite        Boolean  @default(false)
+  showWatermark     Boolean  @default(true)
+  thumbnailAccent   String   @default("#4F46E5")
+  filesJson         String   @default("{}")
+  screensJson       String   @default("[]")
+  messagesJson      String   @default("[]")
+  versionsJson      String   @default("[]")
+  commentsJson      String   @default("[]")
+  collaboratorsJson String   @default("[]")
+  viewsCount        Int      @default(1)
+  forksCount        Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  workspace    Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  folder       Folder?       @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  designSystem DesignSystem? @relation(fields: [designSystemId], references: [id], onDelete: SetNull)
+  createdBy    User          @relation(fields: [createdById], references: [id], onDelete: Cascade)
+}
+
+model CanvasProject {
+  id             String   @id @default(cuid())
+  workspaceId    String
+  createdById    String
+  name           String   @default("Untitled")
+  nodesJson      String   @default("[]")
+  edgesJson      String   @default("[]")
+  transcriptJson String   @default("[]")
+  zoom           Float    @default(1.0)
+  panX           Float    @default(0)
+  panY           Float    @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  createdBy User      @relation(fields: [createdById], references: [id], onDelete: Cascade)
+}
+
+// ============================================================================
+// INTEGRATIONS, MCP CONNECTORS, SKILLS, API KEYS & CREDITS
+// ============================================================================
+
+model WorkspaceIntegrationKey {
+  id          String   @id @default(cuid())
+  workspaceId String
+  provider    String
+  name        String
+  maskedKey   String
+  keyHash     String
+  createdById String?
+  createdAt   DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+model McpConnector {
+  id          String   @id @default(cuid())
+  workspaceId String
+  provider    String
+  name        String
+  description String
+  serverUrl   String   @default("https://mcp.magicpatterns.com")
+  authType    String   @default("OAuth")
+  status      String   @default("DISCONNECTED")
+  isCustom    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+model AiSkill {
+  id            String   @id @default(cuid())
+  workspaceId   String
+  slug          String
+  name          String
+  description   String
+  commandRepo   String   @default("")
+  skillMarkdown String   @default("")
+  isFeatured    Boolean  @default(false)
+  isEnabled     Boolean  @default(true)
+  createdAt     DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+model WorkspaceApiKey {
+  id          String    @id @default(cuid())
+  workspaceId String
+  name        String
+  maskedKey   String
+  keyHash     String
+  lastUsedAt  DateTime?
+  createdById String?
+  createdAt   DateTime  @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+model CreditTransaction {
+  id           String   @id @default(cuid())
+  workspaceId  String
+  actorEmail   String
+  actionType   String
+  creditsDelta Int
+  description  String
+  createdAt    DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}

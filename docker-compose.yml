@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: magicpatterns
+      POSTGRES_PASSWORD: magicpatterns_password
+      POSTGRES_DB: magicpatterns
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://magicpatterns:magicpatterns_password@postgres:5432/magicpatterns?schema=public"
+      NEXTAUTH_URL: "http://localhost:3000"
+      NEXTAUTH_SECRET: "production-secret-replace-me"
+      ACCOUNT_ADMISSION_MODE: "invitation-only"
+      ALLOW_CREDENTIAL_REGISTRATION: "true"
+      REQUIRE_EMAIL_VERIFICATION: "false"
+
+volumes:
+  pgdata:

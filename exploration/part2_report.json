@@ -1,0 +1,1880 @@
+[
+  {
+    "label": "18_settings_team_invite",
+    "url": "https://www.magicpatterns.com/settings/team",
+    "title": "Settings - Magic Patterns",
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Invite teammates"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Invite",
+        "disabled": false
+      },
+      {
+        "text": "Upgrade Plan",
+        "disabled": false
+      },
+      {
+        "text": "Name",
+        "disabled": false
+      },
+      {
+        "text": "Role",
+        "disabled": false
+      },
+      {
+        "text": "Plan",
+        "disabled": false
+      },
+      {
+        "text": "Last Active",
+        "disabled": false
+      },
+      {
+        "text": "Export team as CSV",
+        "disabled": false
+      },
+      {
+        "text": "Free",
+        "disabled": false
+      },
+      {
+        "text": "Actions for Joshuah Powlowski",
+        "disabled": false
+      },
+      {
+        "text": "Previous page",
+        "disabled": true
+      },
+      {
+        "text": "Next page",
+        "disabled": true
+      },
+      {
+        "text": "Close",
+        "disabled": false
+      },
+      {
+        "text": "Cancel",
+        "disabled": false
+      },
+      {
+        "text": "Send invites",
+        "disabled": true
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": "Search members...",
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": "alice@company.com, bob@company.com",
+        "value": ""
+      }
+    ],
+    "dialogs": [
+      "Invite teammates\n\nEnter email addresses to invite people to your workspace.\n\nEmail addresses\n\nSeparate multiple emails with commas\n\nCancel\nSend invites"
+    ],
+    "bodyText": "/\nJoshuah's Workspace\n/\nTeam\nGet free credits\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\n\nTeam Members\n\nInvite\n\nUpgrade your workspace\n\nGet paid seats, more credits, and team features.\n\nUpgrade Plan\nName\tRole\tPlan\tLast Active\t\n\n\nJoshuah Powlowski\n(You)\npowlowskijoshuah@gmail.com\n\tAdmin\tFree\t\n\n3 mins ago\n\n\t\n\nShowing 1 member\n\nPage 1\n\nInvite teammates\n\nEnter email addresses to invite people to your workspace.\n\nEmail addresses\n\nSeparate multiple emails with commas\n\nCancel\nSend invites"
+  },
+  {
+    "label": "19_settings_subscription",
+    "url": "https://www.magicpatterns.com/settings/subscription",
+    "title": "Settings - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Upgrade Plan",
+        "disabled": false
+      },
+      {
+        "text": "Add Payment Method",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nBilling & Subscription\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nCurrent Plan\nFree\nIncludes 100 credits every month.\nUpgrade Plan\nYour Credit Balance\nMonthly credits reset in 32 days.\nRolled Over\n0\nMonthly Credits\n0 used\n/\n0\nFree Credits\n0 used\n/\n100\nGifted\n0\nPurchased\n0\nTotal Available\n100\nPayment Method\n**** **** **** ****\nVALID THRU\n--/--\nNo payment method on file.\nAdd Payment Method\nInvoices\nDate\tInvoice\tAmount\tStatus\tDownload\nNo invoices yet."
+  },
+  {
+    "label": "20_settings_workspace",
+    "url": "https://www.magicpatterns.com/settings/workspace",
+    "title": "Settings - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      },
+      {
+        "text": "Learn more.",
+        "href": "https://cal.com/team/magicpatterns/book-a-call?utm_source=website&utm_content=settings_support_section"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Change workspace logo",
+        "disabled": false
+      },
+      {
+        "text": "Save",
+        "disabled": true
+      },
+      {
+        "text": "Upgrade to Business",
+        "disabled": false
+      },
+      {
+        "text": "Upgrade to Business",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": "Workspace name",
+        "value": "Joshuah's Workspace"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "placeholder": null,
+        "value": "on"
+      }
+    ],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nWorkspace\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nWorkspace Settings\nWorkspace Logo\nShown in the sidebar and anywhere your workspace appears. Click it to change — square PNG, JPG, or WEBP.\nWorkspace Name\nVisible to everyone in your workspace.\nSave\nShare new designs with the workspace\nEveryone in the workspace can view a design as soon as it is created. Creators can still change who has access on any individual design.\nSingle Sign-On (SSO)\nSSO is available on Business and Enterprise plans. Upgrade to configure SAML or OIDC for your workspace.\nUpgrade to Business\nDedicated Slack or Microsoft Teams Channel\nDedicated support is available on Business and Enterprise plans. Need a technical account manager? We're here to help. Learn more.\nUpgrade to Business"
+  },
+  {
+    "label": "21_settings_usage_reports",
+    "url": "https://www.magicpatterns.com/settings/usage-reports",
+    "title": "Usage Reports - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      },
+      {
+        "text": "Book a call",
+        "href": "https://cal.com/team/magicpatterns/book-a-demo?utm_source=usage_reports"
+      },
+      {
+        "text": "1\nS\nSarah\nsarah@example.com",
+        "href": "/settings/usage-reports/user/1"
+      },
+      {
+        "text": "2\nJ\nJames\njames@example.com",
+        "href": "/settings/usage-reports/user/2"
+      },
+      {
+        "text": "3\nM\nMaria\nmaria@example.com",
+        "href": "/settings/usage-reports/user/3"
+      },
+      {
+        "text": "4\nA\nAlex\nalex@example.com",
+        "href": "/settings/usage-reports/user/4"
+      },
+      {
+        "text": "5\nP\nPat\npat@example.com",
+        "href": "/settings/usage-reports/user/5"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Upgrade to Business",
+        "disabled": false
+      },
+      {
+        "text": "Book a call",
+        "disabled": false
+      },
+      {
+        "text": "Local (UTC)",
+        "disabled": false
+      },
+      {
+        "text": "UTC",
+        "disabled": false
+      },
+      {
+        "text": "Jul 21 - Oct 19",
+        "disabled": false
+      },
+      {
+        "text": "1D",
+        "disabled": false
+      },
+      {
+        "text": "1M",
+        "disabled": false
+      },
+      {
+        "text": "3M",
+        "disabled": false
+      },
+      {
+        "text": "1Y",
+        "disabled": false
+      },
+      {
+        "text": "Credit Usage\n1,284",
+        "disabled": false
+      },
+      {
+        "text": "Designs Created\n342",
+        "disabled": false
+      },
+      {
+        "text": "Messages Sent\n853",
+        "disabled": false
+      },
+      {
+        "text": "Design",
+        "disabled": false
+      },
+      {
+        "text": "Component",
+        "disabled": false
+      },
+      {
+        "text": "Canvas",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nUsage Reports\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nUnlock Usage Reporting\nTrack workspace adoption, view team leaderboards, and measure time saved with the Business plan.\nUpgrade to Business\nBook a call\nUsage Reports\nTrack workspace activity, adoption, and AI usage across the selected period.\nLocal (UTC)\nUTC\nJul 21 - Oct 19\n1D\n1M\n3M\n1Y\nSummary\nKey metrics and trends for the selected period.\nTimes shown in UTC. CSV exports are always in UTC.\nCredit Usage\n1,284\nDesigns Created\n342\nMessages Sent\n853\nJul 22, 26\nJul 29, 26\nAug 5, 26\nAug 12, 26\nAug 20, 26\nAug 28, 26\nSep 4, 26\nSep 11, 26\nSep 18, 26\nSep 25, 26\nOct 2, 26\nOct 9, 26\nOct 19, 26\n0\n20\n40\n60\n80\nTop Contributors\nRanked by messages sent in the selected period.\nMember\tMessages Sent\tCredit Usage\tDesigns Created\n\n1\nS\nSarah\nsarah@example.com\n\t412\t538\t37\n\n2\nJ\nJames\njames@example.com\n\t287\t361\t24\n\n3\nM\nMaria\nmaria@example.com\n\t195\t240\t18\n\n4\nA\nAlex\nalex@example.com\n\t148\t182\t11\n\n5\nP\nPat\npat@example.com\n\t112\t141\t9\nProductivity Metrics\nEstimated time, cost, and collaboration impact for the selected period.\nTime Saved\n26.8 days\n12,840 total minutes\nCost Savings\n$42,800\nBased on avg. tech industry rate\nCollaboration Views\n6,780\nViews on shared links\nRecent File Changes\nLatest workspace changes across designs, components, and canvases.\nDesign\nComponent\nCanvas\nNo usage data for this period.\nToken Usage\nDetailed model, token, and credit consumption.\n0"
+  },
+  {
+    "label": "22_settings_profile",
+    "url": "https://www.magicpatterns.com/settings/profile",
+    "title": "Settings - Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Profile"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Claim Handle",
+        "disabled": false
+      },
+      {
+        "text": "Change profile picture",
+        "disabled": false
+      },
+      {
+        "text": "Save",
+        "disabled": true
+      },
+      {
+        "text": "Connect to LinkedIn",
+        "disabled": false
+      },
+      {
+        "text": "Connect GitHub",
+        "disabled": false
+      },
+      {
+        "text": "Connect to Figma",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": "First name",
+        "value": "Joshuah"
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": "Last name",
+        "value": "Powlowski"
+      }
+    ],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nProfile\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nProfile\nActivity\n0 days\nlongest streak\n0\ntokens\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nMon\nWed\nFri\nLess\nMore\nHandle\nClaim your handle\nCreate a shareable public profile with your activity heatmap.\nClaim Handle\nPersonal Information\nJoshuah Powlowski\nProfile picture\nFirst name\nLast name\nSave\nEmail Addresses\nAccount email\nUsed to sign in and for account notifications.\npowlowskijoshuah@gmail.com\nBilling email\nReceipts and invoices are sent to this address.\npowlowskijoshuah@gmail.com\nConnected Accounts\nLinkedIn\nMake your experience with Magic Patterns visible on your LinkedIn profile under \"Connected Apps\"\nConnect to LinkedIn\nGitHub\nConnect the Magic Patterns GitHub App to let Magic Patterns read your repositories and sync generated code back to GitHub.\nConnect GitHub\nFigma\nImport frames from your Figma files and turn them into working code.\nConnect to Figma"
+  },
+  {
+    "label": "23_settings_integrations",
+    "url": "https://www.magicpatterns.com/settings/integrations",
+    "title": "Settings - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      },
+      {
+        "text": "OpenAI",
+        "href": "https://www.magicpatterns.com/docs/documentation/integrations/openai"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Add Key",
+        "disabled": false
+      },
+      {
+        "text": "Connect New Key",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nIntegrations\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nIntegrations\nAdd Key\nConnect your external service API keys (like OpenAI or Anthropic) to use them in Magic Patterns. These keys allow Magic Patterns to call external services on your behalf.\nNo Integrations Connected\nYou haven't connected any external service API keys yet.\nConnect New Key"
+  },
+  {
+    "label": "24_settings_connectors",
+    "url": "https://www.magicpatterns.com/settings/connectors",
+    "title": "Settings - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Add Custom",
+        "disabled": false
+      },
+      {
+        "text": "Connect",
+        "disabled": false
+      },
+      {
+        "text": "Connect",
+        "disabled": false
+      },
+      {
+        "text": "Connect",
+        "disabled": false
+      },
+      {
+        "text": "Connect",
+        "disabled": false
+      },
+      {
+        "text": "Connect",
+        "disabled": false
+      },
+      {
+        "text": "Connect",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nConnectors\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nConnectors\nAdd Custom\nConnect external services via MCP (Model Context Protocol). When enabled, the AI assistant can call tools exposed by these connectors to pull in context from your other apps.\nGranola\nConnect to Granola to pull meeting notes and context into your designs.\nConnect\nNotion\nConnect to Notion to pull pages, databases, and content into your designs.\nConnect\nLinear\nConnect to Linear to pull issues, projects, and roadmaps into your designs.\nConnect\nMiro\nConnect to Miro to pull boards, frames, and visual context into your designs.\nConnect\nJira\nConnect to Jira to pull project context into your designs.\nConnect\nMobbin\nConnect to Mobbin to pull real-world UI design patterns into your designs.\nConnect"
+  },
+  {
+    "label": "25_settings_skills",
+    "url": "https://www.magicpatterns.com/settings/skills",
+    "title": "Settings - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      },
+      {
+        "text": "Better Animation\nFeatured\nCreate, review, and improve UI motion and animation in a self-contained wa",
+        "href": "/settings/skills/skill-1evvutnjyy1y41jpzkchgg"
+      },
+      {
+        "text": "Audit a11y\nFeatured\nCheck a frontend or website for accessibility issues using a self-contained audi",
+        "href": "/settings/skills/skill-sy31u8csxzx5xolhtgvexo"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Install Skill",
+        "disabled": false
+      },
+      {
+        "text": "New Skill",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "placeholder": null,
+        "value": "on"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "placeholder": null,
+        "value": "on"
+      }
+    ],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nSkills\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nSkills\nInstall Skill\nNew Skill\nSkills provide specialized instructions that the AI assistant can activate on demand. Add SKILL.md packages to give the assistant new capabilities and domain expertise.\nBetter Animation\nFeatured\nCreate, review, and improve UI motion and animation in a self-contained way. Use when the user wants animations added, reviewed, debugged, softened, made smoother, or wants advice on gestures, transitions, springs, or motion behavior in a frontend.\nEnabled\nBetter Animation\nAudit a11y\nFeatured\nCheck a frontend or website for accessibility issues using a self-contained audit flow. Use when the user asks for an accessibility audit, a11y check, WCAG review, compliance scan, or wants specific accessibility concerns verified.\nEnabled\nAudit a11y"
+  },
+  {
+    "label": "26_settings_api_keys",
+    "url": "https://www.magicpatterns.com/settings/api-keys",
+    "title": "Settings - Magic Patterns",
+    "headings": [],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Joshuah's Workspace",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Back to Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Billing & Subscription",
+        "href": "/settings/subscription"
+      },
+      {
+        "text": "Workspace",
+        "href": "/settings/workspace"
+      },
+      {
+        "text": "Usage Reports",
+        "href": "/settings/usage-reports"
+      },
+      {
+        "text": "Profile",
+        "href": "/settings/profile"
+      },
+      {
+        "text": "Integrations",
+        "href": "/settings/integrations"
+      },
+      {
+        "text": "Connectors",
+        "href": "/settings/connectors"
+      },
+      {
+        "text": "Skills",
+        "href": "/settings/skills"
+      },
+      {
+        "text": "API Keys",
+        "href": "/settings/api-keys"
+      },
+      {
+        "text": "REST API",
+        "href": "https://www.magicpatterns.com/docs/api/getting-started"
+      },
+      {
+        "text": "MCP server",
+        "href": "https://www.magicpatterns.com/docs/documentation/features/mcp-server/overview"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Upgrade",
+        "disabled": false
+      },
+      {
+        "text": "Upgrade",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\n/\nAPI Keys\nGet free credits\nInvite Team\nBack to Home\nTeam\nBilling & Subscription\nWorkspace\nUsage Reports\nProfile\nIntegrations\nConnectors\nSkills\nAPI Keys\nAPI Keys\nUpgrade\nCreate API keys for programmatic access to Magic Patterns. The same key works for both our REST API and the MCP server — you only need one key for both. Do not share your API key with others.\nAPI keys require a paid plan\nUpgrade to Starter or above to create API keys for the Magic Patterns REST API and MCP server.\nUpgrade"
+  },
+  {
+    "label": "27_files_filter_popover",
+    "url": "https://www.magicpatterns.com/dashboard/files",
+    "title": "Files - Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Invite your team"
+      },
+      {
+        "tag": "H1",
+        "text": "Files"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Files",
+        "href": "/dashboard/files"
+      },
+      {
+        "text": "Templates",
+        "href": "/dashboard/templates"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/design-systems"
+      },
+      {
+        "text": "Introducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog",
+        "href": "https://www.magicpatterns.com/blog/introducing-magicos"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Create",
+        "disabled": false
+      },
+      {
+        "text": "Search",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Dismiss",
+        "disabled": false
+      },
+      {
+        "text": "Send an invite",
+        "disabled": false
+      },
+      {
+        "text": "Collapse card",
+        "disabled": false
+      },
+      {
+        "text": "Get Support",
+        "disabled": false
+      },
+      {
+        "text": "Dismiss",
+        "disabled": false
+      },
+      {
+        "text": "All Files",
+        "disabled": false
+      },
+      {
+        "text": "Designs",
+        "disabled": false
+      },
+      {
+        "text": "Canvas",
+        "disabled": false
+      },
+      {
+        "text": "Templates",
+        "disabled": false
+      },
+      {
+        "text": "Search files",
+        "disabled": false
+      },
+      {
+        "text": "Filter",
+        "disabled": false
+      },
+      {
+        "text": "Last Updated",
+        "disabled": false
+      },
+      {
+        "text": "Grid view",
+        "disabled": false
+      },
+      {
+        "text": "List view",
+        "disabled": false
+      },
+      {
+        "text": "New Folder",
+        "disabled": false
+      },
+      {
+        "text": "Create your first design.",
+        "disabled": false
+      },
+      {
+        "text": "Design system",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": null,
+        "value": "updatedAt"
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": null,
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "placeholder": null,
+        "value": "on"
+      }
+    ],
+    "dialogs": [
+      "Design system\nDesign system\nFavorites only"
+    ],
+    "bodyText": "/\nJoshuah's Workspace\nFree\nGet free credits\nInvite Team\nCreate\nSearch\nCtrl+K\nHome\nJoshuah's Workspace\nFree\nFiles\nTemplates\nDesign Systems\nInvite your team\n\nEarn 100 credits for teammates who join.\n\nSend an invite\nIntroducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog\nDocumentation\nGet Support\nFiles\nTip: Right-click on a file for additional actions.\nAll Files\nDesigns\nCanvas\nTemplates\nFilter\nLast Updated\n\nNo files yet\n\nCreate your first design.\n\nDesign system\nDesign system\nFavorites only"
+  },
+  {
+    "label": "30_design_systems_new",
+    "url": "https://www.magicpatterns.com/design-systems",
+    "title": "Design Systems - Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Invite your team"
+      },
+      {
+        "tag": "H1",
+        "text": "Design Systems"
+      },
+      {
+        "tag": "H2",
+        "text": "Create Design System"
+      },
+      {
+        "tag": "H3",
+        "text": "New design system"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Files",
+        "href": "/dashboard/files"
+      },
+      {
+        "text": "Templates",
+        "href": "/dashboard/templates"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/design-systems"
+      },
+      {
+        "text": "Introducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog",
+        "href": "https://www.magicpatterns.com/blog/introducing-magicos"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Create",
+        "disabled": false
+      },
+      {
+        "text": "Search",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Dismiss",
+        "disabled": false
+      },
+      {
+        "text": "Send an invite",
+        "disabled": false
+      },
+      {
+        "text": "Collapse card",
+        "disabled": false
+      },
+      {
+        "text": "Get Support",
+        "disabled": false
+      },
+      {
+        "text": "Search files",
+        "disabled": false
+      },
+      {
+        "text": "Filter",
+        "disabled": false
+      },
+      {
+        "text": "Last Updated",
+        "disabled": false
+      },
+      {
+        "text": "Grid view",
+        "disabled": false
+      },
+      {
+        "text": "List view",
+        "disabled": false
+      },
+      {
+        "text": "New",
+        "disabled": false
+      },
+      {
+        "text": "Create your first design system.",
+        "disabled": false
+      },
+      {
+        "text": "Overview",
+        "disabled": false
+      },
+      {
+        "text": "Connect Sources",
+        "disabled": true
+      },
+      {
+        "text": "Close",
+        "disabled": false
+      },
+      {
+        "text": "Yes, link a source\nGitHub, Figma, or website",
+        "disabled": false
+      },
+      {
+        "text": "No, start another way\nUse an existing system or start blank",
+        "disabled": false
+      },
+      {
+        "text": "Cancel",
+        "disabled": false
+      },
+      {
+        "text": "Continue",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": null,
+        "value": "updatedAt"
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": "My Design System",
+        "value": ""
+      }
+    ],
+    "dialogs": [
+      "Create Design System\nOverview\nConnect Sources\nNew design system\n\nDefine the rules, colors, typography, and components used in your designs.\n\nDesign System *\n\nAdd a name and optional logo to identify your design system.\n\nDo you have GitHub, Figma, or a website to link from? *\n\nChoose how you want to start. You'll configure it in the next step.\n\nYes, link a source\nGitHub, Figma, or website\nNo, start another way\nUse an existing system or start blank\nCancel\nContinue"
+    ],
+    "bodyText": "/\nJoshuah's Workspace\nFree\nGet free credits\nInvite Team\nCreate\nSearch\nCtrl+K\nHome\nJoshuah's Workspace\nFree\nFiles\nTemplates\nDesign Systems\nInvite your team\n\nEarn 100 credits for teammates who join.\n\nSend an invite\nIntroducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog\nDocumentation\nGet Support\nDesign Systems\nFilter\nLast Updated\nNew\n\nNo design systems yet\n\nCreate your first design system.\n\nCreate Design System\nOverview\nConnect Sources\nNew design system\n\nDefine the rules, colors, typography, and components used in your designs.\n\nDesign System *\n\nAdd a name and optional logo to identify your design system.\n\nDo you have GitHub, Figma, or a website to link from? *\n\nChoose how you want to start. You'll configure it in the next step.\n\nYes, link a source\nGitHub, Figma, or website\nNo, start another way\nUse an existing system or start blank\nCancel\nContinue"
+  },
+  {
+    "label": "31_create_design_editor",
+    "url": "https://www.magicpatterns.com/dashboard",
+    "title": "Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Invite your team"
+      },
+      {
+        "tag": "H1",
+        "text": "Recents"
+      },
+      {
+        "tag": "H2",
+        "text": "New Design"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Files",
+        "href": "/dashboard/files"
+      },
+      {
+        "text": "Templates",
+        "href": "/dashboard/templates"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/design-systems"
+      },
+      {
+        "text": "Introducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog",
+        "href": "https://www.magicpatterns.com/blog/introducing-magicos"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs"
+      },
+      {
+        "text": "MagicOS",
+        "href": "/os/new"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Create",
+        "disabled": false
+      },
+      {
+        "text": "Search",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Dismiss",
+        "disabled": false
+      },
+      {
+        "text": "Send an invite",
+        "disabled": false
+      },
+      {
+        "text": "Collapse card",
+        "disabled": false
+      },
+      {
+        "text": "Get Support",
+        "disabled": false
+      },
+      {
+        "text": "Design",
+        "disabled": false
+      },
+      {
+        "text": "Slide Deck",
+        "disabled": false
+      },
+      {
+        "text": "Design System",
+        "disabled": false
+      },
+      {
+        "text": "Recently viewed",
+        "disabled": false
+      },
+      {
+        "text": "Shared with Me",
+        "disabled": false
+      },
+      {
+        "text": "Shared with Workspace",
+        "disabled": false
+      },
+      {
+        "text": "Search files",
+        "disabled": false
+      },
+      {
+        "text": "Filter",
+        "disabled": false
+      },
+      {
+        "text": "Last Updated",
+        "disabled": false
+      },
+      {
+        "text": "Grid view",
+        "disabled": false
+      },
+      {
+        "text": "List view",
+        "disabled": false
+      },
+      {
+        "text": "Close",
+        "disabled": false
+      },
+      {
+        "text": "Add",
+        "disabled": false
+      },
+      {
+        "text": "Commands",
+        "disabled": false
+      },
+      {
+        "text": "Design System\nBase",
+        "disabled": false
+      },
+      {
+        "text": "Auto",
+        "disabled": false
+      },
+      {
+        "text": "Dictate",
+        "disabled": false
+      },
+      {
+        "text": "",
+        "disabled": true
+      },
+      {
+        "text": "Recreate a screenshot",
+        "disabled": false
+      },
+      {
+        "text": "Import from GitHub",
+        "disabled": false
+      },
+      {
+        "text": "Import from Figma",
+        "disabled": false
+      },
+      {
+        "text": "Create a slide deck",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": null,
+        "value": "updatedAt"
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      }
+    ],
+    "dialogs": [
+      "New Design\n\n\n\n\nDesign System\nBase\nAuto\nRecreate a screenshot\nImport from GitHub\nImport from Figma\nCreate a slide deck"
+    ],
+    "bodyText": "/\nJoshuah's Workspace\nFree\nGet free credits\nInvite Team\nCreate\nSearch\nCtrl+K\nHome\nJoshuah's Workspace\nFree\nFiles\nTemplates\nDesign Systems\nInvite your team\n\nEarn 100 credits for teammates who join.\n\nSend an invite\nIntroducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog\nDocumentation\nGet Support\nRecents\nDesign\nSlide Deck\nDesign System\nMagicOS\nRecently viewed\nShared with Me\nShared with Workspace\nFilter\nLast Updated\n\nNo recent files yet\n\nCreate your first design above.\n\nNew Design\n\n\n\n\nDesign System\nBase\nAuto\nRecreate a screenshot\nImport from GitHub\nImport from Figma\nCreate a slide deck"
+  },
+  {
+    "label": "32_create_slide_deck",
+    "url": "https://www.magicpatterns.com/dashboard",
+    "title": "Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Invite your team"
+      },
+      {
+        "tag": "H1",
+        "text": "Recents"
+      },
+      {
+        "tag": "H2",
+        "text": "Create a Slide Deck"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Files",
+        "href": "/dashboard/files"
+      },
+      {
+        "text": "Templates",
+        "href": "/dashboard/templates"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/design-systems"
+      },
+      {
+        "text": "Introducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog",
+        "href": "https://www.magicpatterns.com/blog/introducing-magicos"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs"
+      },
+      {
+        "text": "MagicOS",
+        "href": "/os/new"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Create",
+        "disabled": false
+      },
+      {
+        "text": "Search",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Dismiss",
+        "disabled": false
+      },
+      {
+        "text": "Send an invite",
+        "disabled": false
+      },
+      {
+        "text": "Collapse card",
+        "disabled": false
+      },
+      {
+        "text": "Get Support",
+        "disabled": false
+      },
+      {
+        "text": "Design",
+        "disabled": false
+      },
+      {
+        "text": "Slide Deck",
+        "disabled": false
+      },
+      {
+        "text": "Design System",
+        "disabled": false
+      },
+      {
+        "text": "Recently viewed",
+        "disabled": false
+      },
+      {
+        "text": "Shared with Me",
+        "disabled": false
+      },
+      {
+        "text": "Shared with Workspace",
+        "disabled": false
+      },
+      {
+        "text": "Search files",
+        "disabled": false
+      },
+      {
+        "text": "Filter",
+        "disabled": false
+      },
+      {
+        "text": "Last Updated",
+        "disabled": false
+      },
+      {
+        "text": "Grid view",
+        "disabled": false
+      },
+      {
+        "text": "List view",
+        "disabled": false
+      },
+      {
+        "text": "Close",
+        "disabled": false
+      },
+      {
+        "text": "Prompt",
+        "disabled": false
+      },
+      {
+        "text": "Outline",
+        "disabled": false
+      },
+      {
+        "text": "Upload file",
+        "disabled": false
+      },
+      {
+        "text": "Quarterly review",
+        "disabled": false
+      },
+      {
+        "text": "Project kickoff",
+        "disabled": false
+      },
+      {
+        "text": "Sales pitch",
+        "disabled": false
+      },
+      {
+        "text": "Design System\nBase",
+        "disabled": false
+      },
+      {
+        "text": "Cancel",
+        "disabled": false
+      },
+      {
+        "text": "Generate Deck",
+        "disabled": true
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": null,
+        "value": "updatedAt"
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      }
+    ],
+    "dialogs": [
+      "Create a Slide Deck\n\nGenerate a complete presentation from a single prompt, or outline each slide individually.\n\nPrompt\nOutline\nWhat is this presentation about?\n\n\n\n\nSuggested prompts\nQuarterly review\nProject kickoff\nSales pitch\nDesign System\nBase\nCancel\nGenerate Deck"
+    ],
+    "bodyText": "/\nJoshuah's Workspace\nFree\nGet free credits\nInvite Team\nCreate\nSearch\nCtrl+K\nHome\nJoshuah's Workspace\nFree\nFiles\nTemplates\nDesign Systems\nInvite your team\n\nEarn 100 credits for teammates who join.\n\nSend an invite\nIntroducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog\nDocumentation\nGet Support\nRecents\nDesign\nSlide Deck\nDesign System\nMagicOS\nRecently viewed\nShared with Me\nShared with Workspace\nFilter\nLast Updated\n\nNo recent files yet\n\nCreate your first design above.\n\nCreate a Slide Deck\n\nGenerate a complete presentation from a single prompt, or outline each slide individually.\n\nPrompt\nOutline\nWhat is this presentation about?\n\n\n\n\nSuggested prompts\nQuarterly review\nProject kickoff\nSales pitch\nDesign System\nBase\nCancel\nGenerate Deck"
+  },
+  {
+    "label": "33_magicos_new",
+    "url": "https://www.magicpatterns.com/os/bVtYnuouBP1paP91KjgwML",
+    "title": "Untitled | Magic Patterns",
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "MagicOS\nMagicOS"
+      }
+    ],
+    "links": [
+      {
+        "text": "Return to dashboard",
+        "href": "/dashboard"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Rename Untitled",
+        "disabled": false
+      },
+      {
+        "text": "Pointer",
+        "disabled": false
+      },
+      {
+        "text": "Hand",
+        "disabled": false
+      },
+      {
+        "text": "Interact",
+        "disabled": false
+      },
+      {
+        "text": "Back to files",
+        "disabled": false
+      },
+      {
+        "text": "",
+        "disabled": false
+      },
+      {
+        "text": "Hide transcript",
+        "disabled": false
+      },
+      {
+        "text": "Add images or files",
+        "disabled": false
+      },
+      {
+        "text": "Talk to MagicOS",
+        "disabled": false
+      },
+      {
+        "text": "Send",
+        "disabled": true
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "value": ""
+      }
+    ],
+    "dialogs": [],
+    "bodyText": "Untitled\nBack to files\n\nWelcome to\n\nMagicOS\nMagicOS"
+  }
+]

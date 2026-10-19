@@ -1,0 +1,1357 @@
+[
+  {
+    "label": "53_editor_preview_completed",
+    "url": "https://www.magicpatterns.com/c/tvajgfewuihg5kqchnvgxv",
+    "title": "Revenue Metric Card | Magic Patterns",
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Share"
+      }
+    ],
+    "links": [
+      {
+        "text": "Return to dashboard",
+        "href": "/dashboard"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Editor actions",
+        "disabled": false
+      },
+      {
+        "text": "Export",
+        "disabled": false
+      },
+      {
+        "text": "Share",
+        "disabled": false
+      },
+      {
+        "text": "v1",
+        "disabled": false
+      },
+      {
+        "text": "Hide chat",
+        "disabled": false
+      },
+      {
+        "text": "Preview",
+        "disabled": false
+      },
+      {
+        "text": "Screens",
+        "disabled": false
+      },
+      {
+        "text": "Code",
+        "disabled": false
+      },
+      {
+        "text": "Refresh Preview",
+        "disabled": false
+      },
+      {
+        "text": "/index",
+        "disabled": false
+      },
+      {
+        "text": "Responsive",
+        "disabled": false
+      },
+      {
+        "text": "Controls",
+        "disabled": false
+      },
+      {
+        "text": "Visual Edit",
+        "disabled": false
+      },
+      {
+        "text": "Comments",
+        "disabled": false
+      },
+      {
+        "text": "View in New Window",
+        "disabled": false
+      },
+      {
+        "text": "Hide File Tree",
+        "disabled": false
+      },
+      {
+        "text": "Go to file",
+        "disabled": false
+      },
+      {
+        "text": "New file",
+        "disabled": false
+      },
+      {
+        "text": "Copy text",
+        "disabled": false
+      },
+      {
+        "text": "Copy message link",
+        "disabled": false
+      },
+      {
+        "text": "Thought for 6s, phase 1 of 1",
+        "disabled": false
+      },
+      {
+        "text": "1 tool used",
+        "disabled": false
+      },
+      {
+        "text": "Expand activity",
+        "disabled": false
+      },
+      {
+        "text": "Made 7 creates, 4 edits, phase 1 of 2",
+        "disabled": false
+      },
+      {
+        "text": "Thought, phase 2 of 2",
+        "disabled": false
+      },
+      {
+        "text": "12 tools used",
+        "disabled": false
+      },
+      {
+        "text": "Expand activity",
+        "disabled": false
+      },
+      {
+        "text": "Verified updates",
+        "disabled": false
+      },
+      {
+        "text": "Artifact actions",
+        "disabled": false
+      },
+      {
+        "text": "Thumbs up",
+        "disabled": false
+      },
+      {
+        "text": "Thumbs down",
+        "disabled": false
+      },
+      {
+        "text": "Retry",
+        "disabled": false
+      },
+      {
+        "text": "Copy text",
+        "disabled": false
+      },
+      {
+        "text": "Copy message link",
+        "disabled": false
+      },
+      {
+        "text": "Show actions",
+        "disabled": false
+      },
+      {
+        "text": "/Inspiration mode",
+        "disabled": false
+      },
+      {
+        "text": "Edit an element",
+        "disabled": false
+      },
+      {
+        "text": "Select an element",
+        "disabled": false
+      },
+      {
+        "text": "Add",
+        "disabled": false
+      },
+      {
+        "text": "Commands",
+        "disabled": false
+      },
+      {
+        "text": "Select",
+        "disabled": false
+      },
+      {
+        "text": "Auto",
+        "disabled": false
+      },
+      {
+        "text": "Dictate",
+        "disabled": false
+      },
+      {
+        "text": "",
+        "disabled": true
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "SPAN",
+        "type": null,
+        "placeholder": null,
+        "text": "Revenue Metric Card"
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": null,
+        "placeholder": null,
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "type": null,
+        "placeholder": null,
+        "text": "\n"
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "text": ""
+      }
+    ],
+    "dialogs": [],
+    "bodyText": "/\nRevenue Metric Card\nExport\nShare\nv1\nPreview\nScreens\nCode\n/index\nResponsive\n\nCreate a clean SaaS analytics metric card with revenue chart and trend badge\n\n1 tool used\n\nBuilding a single revenue card: a large headline figure, a trend badge comparing to the previous period, a range switcher, and an area chart with hover tooltips. I've assumed a light, neutral look with one indigo accent.\n\n12 tools used\nVerified updates\nAnalytics Metric Card with Revenue Chart\nVersion 1\nWorked for 1m 1s\nSuggested Actions\n/Inspiration mode\nEdit an element\nSelect an element\n\n\n\n\nAuto\nShare"
+  },
+  {
+    "label": "54_editor_actions_menu",
+    "url": "https://www.magicpatterns.com/c/tvajgfewuihg5kqchnvgxv",
+    "title": "Revenue Metric Card | Magic Patterns",
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Share"
+      }
+    ],
+    "links": [
+      {
+        "text": "Return to dashboard",
+        "href": "/dashboard"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Editor actions",
+        "disabled": false
+      },
+      {
+        "text": "Export",
+        "disabled": false
+      },
+      {
+        "text": "Share",
+        "disabled": false
+      },
+      {
+        "text": "v1",
+        "disabled": false
+      },
+      {
+        "text": "Hide chat",
+        "disabled": false
+      },
+      {
+        "text": "Preview",
+        "disabled": false
+      },
+      {
+        "text": "Screens",
+        "disabled": false
+      },
+      {
+        "text": "Code",
+        "disabled": false
+      },
+      {
+        "text": "Refresh Preview",
+        "disabled": false
+      },
+      {
+        "text": "/index",
+        "disabled": false
+      },
+      {
+        "text": "Responsive",
+        "disabled": false
+      },
+      {
+        "text": "Controls",
+        "disabled": false
+      },
+      {
+        "text": "Visual Edit",
+        "disabled": false
+      },
+      {
+        "text": "Comments",
+        "disabled": false
+      },
+      {
+        "text": "View in New Window",
+        "disabled": false
+      },
+      {
+        "text": "Hide File Tree",
+        "disabled": false
+      },
+      {
+        "text": "Go to file",
+        "disabled": false
+      },
+      {
+        "text": "New file",
+        "disabled": false
+      },
+      {
+        "text": "Copy text",
+        "disabled": false
+      },
+      {
+        "text": "Copy message link",
+        "disabled": false
+      },
+      {
+        "text": "Thought for 6s, phase 1 of 1",
+        "disabled": false
+      },
+      {
+        "text": "1 tool used",
+        "disabled": false
+      },
+      {
+        "text": "Expand activity",
+        "disabled": false
+      },
+      {
+        "text": "Made 7 creates, 4 edits, phase 1 of 2",
+        "disabled": false
+      },
+      {
+        "text": "Thought, phase 2 of 2",
+        "disabled": false
+      },
+      {
+        "text": "12 tools used",
+        "disabled": false
+      },
+      {
+        "text": "Expand activity",
+        "disabled": false
+      },
+      {
+        "text": "Verified updates",
+        "disabled": false
+      },
+      {
+        "text": "Artifact actions",
+        "disabled": false
+      },
+      {
+        "text": "Thumbs up",
+        "disabled": false
+      },
+      {
+        "text": "Thumbs down",
+        "disabled": false
+      },
+      {
+        "text": "Retry",
+        "disabled": false
+      },
+      {
+        "text": "Copy text",
+        "disabled": false
+      },
+      {
+        "text": "Copy message link",
+        "disabled": false
+      },
+      {
+        "text": "Show actions",
+        "disabled": false
+      },
+      {
+        "text": "/Inspiration mode",
+        "disabled": false
+      },
+      {
+        "text": "Edit an element",
+        "disabled": false
+      },
+      {
+        "text": "Select an element",
+        "disabled": false
+      },
+      {
+        "text": "Add",
+        "disabled": false
+      },
+      {
+        "text": "Commands",
+        "disabled": false
+      },
+      {
+        "text": "Select",
+        "disabled": false
+      },
+      {
+        "text": "Auto",
+        "disabled": false
+      },
+      {
+        "text": "Dictate",
+        "disabled": false
+      },
+      {
+        "text": "",
+        "disabled": true
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "SPAN",
+        "type": null,
+        "placeholder": null,
+        "text": "Revenue Metric Card"
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": null,
+        "placeholder": null,
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "type": null,
+        "placeholder": null,
+        "text": "\n"
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "placeholder": null,
+        "text": ""
+      }
+    ],
+    "dialogs": [
+      "Actions\nFavorite\nPublish Template\nFork\nConvert\nAdd to MagicOS File\nDesign System\nBase"
+    ],
+    "bodyText": "/\nRevenue Metric Card\nExport\nShare\nv1\nPreview\nScreens\nCode\n/index\nResponsive\n\nCreate a clean SaaS analytics metric card with revenue chart and trend badge\n\n1 tool used\n\nBuilding a single revenue card: a large headline figure, a trend badge comparing to the previous period, a range switcher, and an area chart with hover tooltips. I've assumed a light, neutral look with one indigo accent.\n\n12 tools used\nVerified updates\nAnalytics Metric Card with Revenue Chart\nVersion 1\nWorked for 1m 1s\nSuggested Actions\n/Inspiration mode\nEdit an element\nSelect an element\n\n\n\n\nAuto\nShare\nActions\nFavorite\nPublish Template\nFork\nConvert\nAdd to MagicOS File\nDesign System\nBase"
+  },
+  {
+    "label": "62_dashboard_with_files",
+    "url": "https://www.magicpatterns.com/dashboard",
+    "title": "Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Invite your team"
+      },
+      {
+        "tag": "H1",
+        "text": "Recents"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "Invite Team",
+        "href": "/settings/team"
+      },
+      {
+        "text": "Home",
+        "href": "/dashboard"
+      },
+      {
+        "text": "Files",
+        "href": "/dashboard/files"
+      },
+      {
+        "text": "Templates",
+        "href": "/dashboard/templates"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/design-systems"
+      },
+      {
+        "text": "Introducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog",
+        "href": "https://www.magicpatterns.com/blog/introducing-magicos"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs"
+      },
+      {
+        "text": "MagicOS",
+        "href": "/os/new"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Toggle navigation",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Get free credits",
+        "disabled": false
+      },
+      {
+        "text": "Open account menu",
+        "disabled": false
+      },
+      {
+        "text": "Create",
+        "disabled": false
+      },
+      {
+        "text": "Search",
+        "disabled": false
+      },
+      {
+        "text": "Joshuah's Workspace\nFree",
+        "disabled": false
+      },
+      {
+        "text": "Dismiss",
+        "disabled": false
+      },
+      {
+        "text": "Send an invite",
+        "disabled": false
+      },
+      {
+        "text": "Collapse card",
+        "disabled": false
+      },
+      {
+        "text": "Get Support",
+        "disabled": false
+      },
+      {
+        "text": "Design",
+        "disabled": false
+      },
+      {
+        "text": "Slide Deck",
+        "disabled": false
+      },
+      {
+        "text": "Design System",
+        "disabled": false
+      },
+      {
+        "text": "Recently viewed",
+        "disabled": false
+      },
+      {
+        "text": "Shared with Me",
+        "disabled": false
+      },
+      {
+        "text": "Shared with Workspace",
+        "disabled": false
+      },
+      {
+        "text": "Search files",
+        "disabled": false
+      },
+      {
+        "text": "Filter",
+        "disabled": false
+      },
+      {
+        "text": "Last Updated",
+        "disabled": false
+      },
+      {
+        "text": "Grid view",
+        "disabled": false
+      },
+      {
+        "text": "List view",
+        "disabled": false
+      },
+      {
+        "text": "Favorite",
+        "disabled": false
+      },
+      {
+        "text": "Favorite",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "placeholder": null,
+        "text": "updatedAt"
+      }
+    ],
+    "dialogs": [],
+    "bodyText": "/\nJoshuah's Workspace\nFree\nGet free credits\nInvite Team\nCreate\nSearch\nCtrl+K\nHome\nJoshuah's Workspace\nFree\nFiles\nTemplates\nDesign Systems\nInvite your team\n\nEarn 100 credits for teammates who join.\n\nSend an invite\nIntroducing MagicOS\nA new way to design, build, and ship with your whole team.\nRead the blog\nDocumentation\nGet Support\nRecents\nDesign\nSlide Deck\nDesign System\nMagicOS\nRecently viewed\nShared with Me\nShared with Workspace\nFilter\nLast Updated\nRevenue Metric Card\nUntitled"
+  },
+  {
+    "label": "67_public_landing",
+    "url": "https://www.magicpatterns.com/",
+    "title": "AI Design Tool for Product Teams | Magic Patterns",
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "MagicOS\nMagicOS"
+      },
+      {
+        "tag": "H3",
+        "text": "Prototype new features with AI"
+      },
+      {
+        "tag": "H3",
+        "text": "From idea to handoff, on one canvas"
+      },
+      {
+        "tag": "H3",
+        "text": "Match your existing designs"
+      },
+      {
+        "tag": "H3",
+        "text": "Design & engineering, together"
+      },
+      {
+        "tag": "H3",
+        "text": "Secure AI design for enterprise"
+      },
+      {
+        "tag": "H2",
+        "text": "See what others are building."
+      },
+      {
+        "tag": "H2",
+        "text": "Why product teams choose Magic Patterns"
+      },
+      {
+        "tag": "H3",
+        "text": "How Toast turns weeks of design work into research-ready prototypes in days"
+      },
+      {
+        "tag": "H2",
+        "text": "Frequently asked questions"
+      },
+      {
+        "tag": "H3",
+        "text": "What is Magic Patterns?"
+      },
+      {
+        "tag": "H3",
+        "text": "How does Magic Patterns match your existing product UI?"
+      },
+      {
+        "tag": "H3",
+        "text": "Can Magic Patterns be used as a prototype maker for rapid experiments?"
+      },
+      {
+        "tag": "H3",
+        "text": "How do teams collaborate in Magic Patterns?"
+      },
+      {
+        "tag": "H3",
+        "text": "Is Magic Patterns a secure AI tool for designing?"
+      },
+      {
+        "tag": "H3",
+        "text": "What pricing options does Magic Patterns offer?"
+      },
+      {
+        "tag": "H2",
+        "text": "You bring the context.\nPatty\nWe’ll bring the \nmagic\nmagic\nSarah\n."
+      }
+    ],
+    "links": [
+      {
+        "text": "We're hiring\nEngineers, designers, and GTM.\nView roles",
+        "href": "/careers"
+      },
+      {
+        "text": "Magic Patterns home",
+        "href": "/"
+      },
+      {
+        "text": "Enterprise",
+        "href": "/enterprise"
+      },
+      {
+        "text": "Customers",
+        "href": "/customers"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Login",
+        "href": "/login"
+      },
+      {
+        "text": "Get a demo",
+        "href": "https://cal.com/team/magicpatterns/book-a-demo?utm_source=homepage"
+      },
+      {
+        "text": "Start for Free",
+        "href": "/signup"
+      },
+      {
+        "text": "Get Started",
+        "href": "/signup?callback=%2Fos%2Fnew"
+      },
+      {
+        "text": "Learn more",
+        "href": "/blog/introducing-magicos"
+      },
+      {
+        "text": "Magic Patterns Aurora\n\nby The Magic Patterns Team\n\n324",
+        "href": "/templates/bav5esg88u55mywv8m5t5e"
+      },
+      {
+        "text": "Product Launch Slidedeck\n\nby Annie\n\n23",
+        "href": "/templates/kq4esimezmhytyofd4hstf"
+      },
+      {
+        "text": "Luxury Real Estate Hero with Gallery\n\nby Luis\n\n44",
+        "href": "/templates/shycknnn5jgsz6wfx7as3d"
+      },
+      {
+        "text": "E-Commerce Mobile App\n\nby Isabel\n\n24",
+        "href": "/templates/q5gwghl5uhqmwqjkwe4gfw"
+      },
+      {
+        "text": "Issue Tracker\n\nby Bryan\n\n39",
+        "href": "/templates/rnl5rsvq76rqfytas5xunn"
+      },
+      {
+        "text": "SVG Logo Effects Studio\n\nby Steve\n\n143",
+        "href": "/templates/nzxpmntbxgxeewodr7tvxp"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/toast"
+      },
+      {
+        "text": "Read case study",
+        "href": "/customers/vanta"
+      },
+      {
+        "text": "Trust Center",
+        "href": "https://trust.magicpatterns.com"
+      },
+      {
+        "text": "magicpatterns.com/pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Get Started",
+        "href": "/signup?callback=%2Fos%2Fnew"
+      },
+      {
+        "text": "Talk to our Team",
+        "href": "https://cal.com/team/magicpatterns/book-a-demo"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Enterprise",
+        "href": "/enterprise"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/product/design-systems"
+      },
+      {
+        "text": "AI Prototype Generator",
+        "href": "/product/ai-prototype-generator"
+      },
+      {
+        "text": "Customers",
+        "href": "/customers"
+      },
+      {
+        "text": "Changelog",
+        "href": "https://www.magicpatterns.com/docs/documentation/feature-releases/changelog"
+      },
+      {
+        "text": "Status",
+        "href": "https://magicpatterns.statuspage.io/"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs/documentation/get-started/introduction"
+      },
+      {
+        "text": "Prompting Guide",
+        "href": "https://www.magicpatterns.com/docs/documentation/editor/how-to-prompt"
+      },
+      {
+        "text": "Brand Guidelines",
+        "href": "https://brand.magicpatterns.com/"
+      },
+      {
+        "text": "Careers",
+        "href": "/careers"
+      },
+      {
+        "text": "Ambassadors",
+        "href": "/ambassadors"
+      },
+      {
+        "text": "Blog",
+        "href": "/blog"
+      },
+      {
+        "text": "Privacy",
+        "href": "https://www.magicpatterns.com/docs/documentation/legal/privacy"
+      },
+      {
+        "text": "Terms",
+        "href": "https://www.magicpatterns.com/docs/documentation/legal/terms"
+      },
+      {
+        "text": "Security",
+        "href": "https://www.magicpatterns.com/docs/documentation/enterprise/security"
+      },
+      {
+        "text": "Trust Center",
+        "href": "https://trust.magicpatterns.com/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/magicpatterns"
+      },
+      {
+        "text": "X",
+        "href": "https://twitter.com/magicpatterns"
+      },
+      {
+        "text": "LinkedIn",
+        "href": "https://www.linkedin.com/company/magicpatterns"
+      },
+      {
+        "text": "Slack community",
+        "href": "https://www.magicpatterns.com/join-slack-community"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Product",
+        "disabled": false
+      },
+      {
+        "text": "Enterprise",
+        "disabled": false
+      },
+      {
+        "text": "Customers",
+        "disabled": false
+      },
+      {
+        "text": "Pricing",
+        "disabled": false
+      },
+      {
+        "text": "Login",
+        "disabled": false
+      },
+      {
+        "text": "Get a demo",
+        "disabled": false
+      },
+      {
+        "text": "Start for Free",
+        "disabled": false
+      },
+      {
+        "text": "Get Started",
+        "disabled": false
+      },
+      {
+        "text": "Learn more",
+        "disabled": false
+      },
+      {
+        "text": "Pause",
+        "disabled": false
+      },
+      {
+        "text": "Watch the story\n2:44",
+        "disabled": false
+      },
+      {
+        "text": "Show Vanta case study",
+        "disabled": false
+      },
+      {
+        "text": "Show Granola case study",
+        "disabled": false
+      },
+      {
+        "text": "Show Lendi Group case study",
+        "disabled": false
+      },
+      {
+        "text": "What is Magic Patterns?",
+        "disabled": false
+      },
+      {
+        "text": "How does Magic Patterns match your existing product UI?",
+        "disabled": false
+      },
+      {
+        "text": "Can Magic Patterns be used as a prototype maker for rapid experiments?",
+        "disabled": false
+      },
+      {
+        "text": "How do teams collaborate in Magic Patterns?",
+        "disabled": false
+      },
+      {
+        "text": "Is Magic Patterns a secure AI tool for designing?",
+        "disabled": false
+      },
+      {
+        "text": "What pricing options does Magic Patterns offer?",
+        "disabled": false
+      },
+      {
+        "text": "Get Started",
+        "disabled": false
+      },
+      {
+        "text": "Talk to our Team",
+        "disabled": false
+      },
+      {
+        "text": "Support",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "We're hiring\nEngineers, designers, and GTM.\nView roles\nProduct\nEnterprise\nCustomers\nPricing\nLogin\nGet a demo\nStart for Free\n\nIntroducing\n\nMagicOS\nMagicOS\n\nAn infinite canvas where your ideas, inspiration, designs and decisions live together.\nExplore multiple directions, collaborate with AI, and bring your best ideas to life.\n\nGet Started\nLearn more\n0:03\n3:38\n\nIterate Faster\n\nPrototype new features with AI\n\nTurn a prompt, requirement, or feature idea into high-fidelity UI in minutes, and explore directions before you commit.\n\n2.Generate variants\nCheckout PRD\nCheckout PRD\nGoal\nCut checkout drop-off on mobile by a third.\nRequirements\n⌘V\nPasted\nacme/web\nacme/web\nmain\ncd21e5b Checkout states\nConnected\nbrand-refs.jpg\nDropped in\nCheckout · Two column\nCheckout · Stepped\nCheckout · Express\nor\nMCP\nYour coding agents\nClaude Code\nBuilding the checkout\nCursor\nConnected\nCodex\nConnected\n\nMagicOS\n\nFrom idea to handoff, on one canvas\n\nBring in your PRD, repo, and references, compare directions side by side, and hand the winner to your coding agent.\n\nGet Started\n\nDesign System\n\nMatch your existing designs\n\nBring in your components and design rules. Every concept comes out in your style.\n\nP\nS\nA\nPricing page\nPatty\nSarah\n\nTeam Collaboration\n\nDesign & engineering, together\n\nEdit, share, and iterate on designs live with your whole team, all at once.\n\nShare “Pricing page”\nAdd people by email\nP\nPatty\nOwner\nS\nSarah\nCan edit\nAcme workspace only\nSOC 2 · ISO 27001\n\nSecure & Compliant\n\nSecure AI design for enterprise\n\nKeep designs secure and compliant. SOC 2 and ISO 27001 certified for enterprise.\n\nSee what others are building.\n\nOver 1 million designs created by our community.\n\nMagic Patterns Aurora\n\nby The Magic Patterns Team\n\n324\n\nProduct Launch Slidedeck\n\nby Annie\n\n23\n\nLuxury Real Estate Hero with Gallery\n\nby Luis\n\n44\n\nE-Commerce Mobile App\n\nby Isabel\n\n24\n\nIssue Tracker\n\nby Bryan\n\n39\n\nSVG Logo Effects Studio\n\nby Steve\n\n143\nWhy product teams choose Magic Patterns\n\nJoin 500K+ others building their ideas.\n\nWatch the story\n2:44\nHow Toast turns weeks of design work into research-ready prototypes in days\nRead the case study\n~2 weeks\n\nsaved per feature\n\nPrototypes that look like real Vanta features, not mockups.\n\nRead case study\nCase study\nDon't sleep on Magic Patterns! It's one of the most promising design system tools I've seen lately.\nDan Mall\nFounder at Design System University\nI love the product and wish I had a tool like this when I was working on frontend engineering projects in the past.\nAmulya Balakrishnan\nFounder\nMagic Patterns lets me go from a customer call to a beautiful, high-fidelity prototype in just hours. This is the future of product building. And the feedback loop you get is SO FAST. It's magic.\nJimmy Chan\nProduct Lead at Vapi\nI've been making some simple components and things have been working well. I really love your platform.\nAustin Pantall\nDirector of Technology\nThe future of building UI and composing design system components together will be driven by AI — and it’s super exciting to see Magic Patterns lead the way.\nKathryn Gonzalez\nFormer Head of Design Infra at Doordash\nDef a fan of Magic Patterns! Every time I need to ship something I come back.\nFengjiao Peng\nFounder at Shortbread\nLove using Magic Patterns — one of the coolest AI products I've seen lately, and as a non-technical person this is by far one of the easiest tools I've tried.\nKirti\nCEO at Zeal\nI've recommended it to 4-5 people already. Pretty sick tool. Super well-designed and helpful in helping me grow my business.\nCollin Toyn\nCo-founder at Planster\nI built near an entire app with different pages to demo to someone with multifile, and it made a super complex nested app within an hour.\nPreston Zhou\nCo-founder at Relace\nI've been waiting for a tool like this to get good for some time now and it's finally here. Extremely impressed and inspired by what you all have built. Currently using it for prototyping various designs for my business.\nEvan Dhillon\nCEO at Kits AI\nLoving your product, giving me lots of inspiration.\nTravis Tyler\nChief Product Officer at Lendi Group\nIf I don't want my team to think too much, Magic Patterns helps me put something down, very helpful.\nSamuel Crombie\nFounder at Pumpkin\nDon't sleep on Magic Patterns! It's one of the most promising design system tools I've seen lately.\nDan Mall\nFounder at Design System University\nI love the product and wish I had a tool like this when I was working on frontend engineering projects in the past.\nAmulya Balakrishnan\nFounder\nMagic Patterns lets me go from a customer call to a beautiful, high-fidelity prototype in just hours. This is the future of product building. And the feedback loop you get is SO FAST. It's magic.\nJimmy Chan\nProduct Lead at Vapi\nI've been making some simple components and things have been working well. I really love your platform.\nAustin Pantall\nDirector of Technology\nThe future of building UI and composing design system components together will be driven by AI — and it’s super exciting to see Magic Patterns lead the way.\nKathryn Gonzalez\nFormer Head of Design Infra at Doordash\nDef a fan of Magic Patterns! Every time I need to ship something I come back.\nFengjiao Peng\nFounder at Shortbread\nLove using Magic Patterns — one of the coolest AI products I've seen lately, and as a non-technical person this is by far one of the easiest tools I've tried.\nKirti\nCEO at Zeal\nI've recommended it to 4-5 people already. Pretty sick tool. Super well-designed and helpful in helping me grow my business.\nCollin Toyn\nCo-founder at Planster\nI built near an entire app with different pages to demo to someone with multifile, and it made a super complex nested app within an hour.\nPreston Zhou\nCo-founder at Relace\nI've been waiting for a tool like this to get good for some time now and it's finally here. Extremely impressed and inspired by what you all have built. Currently using it for prototyping various designs for my business.\nEvan Dhillon\nCEO at Kits AI\nLoving your product, giving"
+  },
+  {
+    "label": "68_public_pricing",
+    "url": "https://www.magicpatterns.com/pricing",
+    "title": "Magic Patterns Pricing",
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Flexible plans that\ngrow with you"
+      },
+      {
+        "tag": "H2",
+        "text": "Free"
+      },
+      {
+        "tag": "H2",
+        "text": "$0"
+      },
+      {
+        "tag": "H2",
+        "text": "Starter"
+      },
+      {
+        "tag": "H2",
+        "text": "$17"
+      },
+      {
+        "tag": "H2",
+        "text": "Business"
+      },
+      {
+        "tag": "H2",
+        "text": "$85"
+      },
+      {
+        "tag": "H2",
+        "text": "Enterprise"
+      },
+      {
+        "tag": "H2",
+        "text": "Custom"
+      },
+      {
+        "tag": "H3",
+        "text": "On-Demand Usage"
+      },
+      {
+        "tag": "H3",
+        "text": "Backed by enterprise-grade security"
+      },
+      {
+        "tag": "H2",
+        "text": "FAQ"
+      },
+      {
+        "tag": "H3",
+        "text": "How do I pick the right plan?"
+      },
+      {
+        "tag": "H3",
+        "text": "What is a \"credit\"?"
+      },
+      {
+        "tag": "H3",
+        "text": "Why isn't Magic Patterns completely free?"
+      },
+      {
+        "tag": "H3",
+        "text": "Do you offer a free tier?"
+      },
+      {
+        "tag": "H3",
+        "text": "Do unused credits roll over?"
+      },
+      {
+        "tag": "H3",
+        "text": "How can I cancel my plan?"
+      },
+      {
+        "tag": "H3",
+        "text": "I have more questions."
+      },
+      {
+        "tag": "H1",
+        "text": "Try Magic Patterns for free"
+      }
+    ],
+    "links": [
+      {
+        "text": "Magic Patterns home",
+        "href": "/"
+      },
+      {
+        "text": "Enterprise",
+        "href": "/enterprise"
+      },
+      {
+        "text": "Customers",
+        "href": "/customers"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Login",
+        "href": "/login"
+      },
+      {
+        "text": "Get a demo",
+        "href": "https://cal.com/team/magicpatterns/book-a-demo?utm_source=pricing"
+      },
+      {
+        "text": "Start for Free",
+        "href": "/signup"
+      },
+      {
+        "text": "Start for free",
+        "href": "/signup"
+      },
+      {
+        "text": "Get started",
+        "href": "/login"
+      },
+      {
+        "text": "Get started",
+        "href": "/login"
+      },
+      {
+        "text": "Request a quote",
+        "href": "/book-a-call?utm_content=pricing_page_enterprise_card"
+      },
+      {
+        "text": "Trust Center",
+        "href": "https://trust.magicpatterns.com/"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/toast"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/blog/ramp-ai-design-process"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/vanta"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/vapi"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/granola"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/zeal"
+      },
+      {
+        "text": "Read the case study",
+        "href": "/customers/lendi"
+      },
+      {
+        "text": "Get Started for Free",
+        "href": "/signup"
+      },
+      {
+        "text": "Request a quote",
+        "href": "/book-a-call?utm_content=pricing_page_footer_cta"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "Enterprise",
+        "href": "/enterprise"
+      },
+      {
+        "text": "Design Systems",
+        "href": "/product/design-systems"
+      },
+      {
+        "text": "AI Prototype Generator",
+        "href": "/product/ai-prototype-generator"
+      },
+      {
+        "text": "Customers",
+        "href": "/customers"
+      },
+      {
+        "text": "Changelog",
+        "href": "https://www.magicpatterns.com/docs/documentation/feature-releases/changelog"
+      },
+      {
+        "text": "Status",
+        "href": "https://magicpatterns.statuspage.io/"
+      },
+      {
+        "text": "Documentation",
+        "href": "https://www.magicpatterns.com/docs/documentation/get-started/introduction"
+      },
+      {
+        "text": "Prompting Guide",
+        "href": "https://www.magicpatterns.com/docs/documentation/editor/how-to-prompt"
+      },
+      {
+        "text": "Brand Guidelines",
+        "href": "https://brand.magicpatterns.com/"
+      },
+      {
+        "text": "Careers",
+        "href": "/careers"
+      },
+      {
+        "text": "Ambassadors",
+        "href": "/ambassadors"
+      },
+      {
+        "text": "Blog",
+        "href": "/blog"
+      },
+      {
+        "text": "Privacy",
+        "href": "https://www.magicpatterns.com/docs/documentation/legal/privacy"
+      },
+      {
+        "text": "Terms",
+        "href": "https://www.magicpatterns.com/docs/documentation/legal/terms"
+      },
+      {
+        "text": "Security",
+        "href": "https://www.magicpatterns.com/docs/documentation/enterprise/security"
+      },
+      {
+        "text": "Trust Center",
+        "href": "https://trust.magicpatterns.com/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/magicpatterns"
+      },
+      {
+        "text": "X",
+        "href": "https://twitter.com/magicpatterns"
+      },
+      {
+        "text": "LinkedIn",
+        "href": "https://www.linkedin.com/company/magicpatterns"
+      },
+      {
+        "text": "Slack community",
+        "href": "https://www.magicpatterns.com/join-slack-community"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Product",
+        "disabled": false
+      },
+      {
+        "text": "Enterprise",
+        "disabled": false
+      },
+      {
+        "text": "Customers",
+        "disabled": false
+      },
+      {
+        "text": "Pricing",
+        "disabled": false
+      },
+      {
+        "text": "Login",
+        "disabled": false
+      },
+      {
+        "text": "Get a demo",
+        "disabled": false
+      },
+      {
+        "text": "Start for Free",
+        "disabled": false
+      },
+      {
+        "text": "Annual (15% off)",
+        "disabled": false
+      },
+      {
+        "text": "Monthly",
+        "disabled": false
+      },
+      {
+        "text": "Start for free",
+        "disabled": false
+      },
+      {
+        "text": "Get started",
+        "disabled": false
+      },
+      {
+        "text": "Get started",
+        "disabled": false
+      },
+      {
+        "text": "Request a quote",
+        "disabled": false
+      },
+      {
+        "text": "How do I pick the right plan?",
+        "disabled": false
+      },
+      {
+        "text": "What is a \"credit\"?",
+        "disabled": false
+      },
+      {
+        "text": "Why isn't Magic Patterns completely free?",
+        "disabled": false
+      },
+      {
+        "text": "Do you offer a free tier?",
+        "disabled": false
+      },
+      {
+        "text": "Do unused credits roll over?",
+        "disabled": false
+      },
+      {
+        "text": "How can I cancel my plan?",
+        "disabled": false
+      },
+      {
+        "text": "I have more questions.",
+        "disabled": false
+      },
+      {
+        "text": "Get Started for Free",
+        "disabled": false
+      },
+      {
+        "text": "Request a quote",
+        "disabled": false
+      },
+      {
+        "text": "Support",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "Product\nEnterprise\nCustomers\nPricing\nLogin\nGet a demo\nStart for Free\nFlexible plans that\ngrow with you\n\nStart for free, then speed up your product development lifecycle with Magic Patterns.\n\nAnnual (15% off)\nMonthly\nFree\nFor users just trying us out.\n$0\nper month\n\n \nFree monthly credits\nStart for free\nStarter\nFor hobbyists with light use to explore Magic Patterns.\n$17\n$20\nper seat per month\nbilled annually\n \n1,000 monthly credits\nRemove watermark on preview\nOn-demand usage\nCredit rollovers\nMCP\nSync with GitHub\nTeam workspaces (10 users)\nGet started\nBusiness\nFor professionals & product teams building with Magic Patterns.\n$85\n$100\nper seat per month\nbilled annually\nEverything in Starter, plus:\n5,000 monthly credits\nSSO\nUsage reporting\nTeam workspaces (10+ users)\nGet started\nEnterprise\nFor organizations looking to replace their legacy workflows and become AI-native.\nCustom\nEverything in Business, plus:\nCustom credit pools\nCustom import design system\nPriority support\nDedicated account manager\nSCIM & Access Controls\nDedicated Slack or Microsoft Teams channel\nEarly access to beta features\nRequest a quote\nOn-Demand Usage\n\nWhen your monthly credits run out, paid plans can utilize on-demand usage to keep prompting. Each additional credit costs $0.02 with pay-as-you-go billing on your next invoice.\n\nBacked by enterprise-grade security\n\nWe're SOC 2 and ISO 27001 certified and include Fortune 100 companies amongst our customers. Visit our Trust Center for more details.\n\nUSED BY 500,000+ OTHER TEAMS\nRead the case study\nRead the case study\nRead the case study\nRead the case study\nRead the case study\nRead the case study\nRead the case study\nFAQ\nHow do I pick the right plan?\nWhat is a \"credit\"?\nWhy isn't Magic Patterns completely free?\nDo you offer a free tier?\nDo unused credits roll over?\nHow can I cancel my plan?\nI have more questions.\nTry Magic Patterns for free\n\nPrototype product ideas in seconds, no code required.\n\nGet Started for Free\nRequest a quote\n\nBuild the best version of your product.\n\nPRODUCT\nPricing\nEnterprise\nDesign Systems\nAI Prototype Generator\nCustomers\nChangelog\nStatus\nRESOURCES\nDocumentation\nPrompting Guide\nBrand Guidelines\nSupport\nCOMPANY\nCareers\nAmbassadors\nBlog\nLEGAL\nPrivacy\nTerms\nSecurity\nTrust Center\n\n© North Park Labs, Inc. 2026"
+  },
+  {
+    "label": "69_public_login",
+    "url": "https://www.magicpatterns.com/login",
+    "title": "Login - Magic Patterns",
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Sign in to Magic Patterns"
+      }
+    ],
+    "links": [
+      {
+        "text": "",
+        "href": "/"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Continue with Google",
+        "disabled": false
+      },
+      {
+        "text": "Continue with Github",
+        "disabled": false
+      },
+      {
+        "text": "Continue with Figma",
+        "disabled": false
+      },
+      {
+        "text": "Continue with SAML SSO",
+        "disabled": false
+      },
+      {
+        "text": "Continue with Email",
+        "disabled": false
+      },
+      {
+        "text": "Don't have an account? Sign up.",
+        "disabled": false
+      }
+    ],
+    "inputs": [],
+    "dialogs": [],
+    "bodyText": "Get Support\nDashboard App\nPublish\nExport\nShare\n/\nindex\nResponsive\nChat\n</> Code\nVisual Edit\nv1\nN\nNimbus\nMENU\nDashboard\nContacts\nDeals\nAnalytics\nSettings\nUpgrade plan\nUnlock advanced reports\nUpgrade\nJordan Park\njordan@nimbus.io\nOverview\nWelcome back, Jordan — here's your pipeline\nSearch\n+ New Deal\nRevenue\n+12%\n$84.2k\nDeals won\n+8%\n142\nNew contacts\n+23%\n2,318\nAvg deal size\n+2.4%\n$3.1k\nRevenue Overview\nMonthly recurring revenue\nThis year\nLast year\nJ\nF\nM\nA\nM\nJ\nJ\nA\nS\nO\nN\nD\nWin rate\nClosed / total\n61%\n+4pt\nRecent deals\nView all\nAcme Corp\nJordan P.\nWon\n$12,400\nNorthwind\nRiley C.\nNegotiation\n$8,200\nGlobex\nSam T.\nProposal\n$5,600\n\n...codebase structure and any available components.\n\nSearched\nButton Input Card component\n›\nRead\n3 files\n›\nPlanned\n9s\n›\n\nLet me install the design system components first, then build the dashboard.\n\nInstalled\ncomponents/ui/Button\n›\nInstalled\ncomponents/ui/Card\n›\n\nComponents installed. Now I'll delegate to the UI agent to build the dashboard.\n\nPlanned\n2s\n›\nCreated\ncomponents/Dashboard.tsx +169\n›\nCreated\nApp.tsx +18\n›\n\nThe dashboard is ready. It includes analytics cards, a chart section, a recent activity feed, and a sidebar navigation. The design uses your wireframe system components.\n\nVerified updates\nCreate CRM Dashboard...\n↻ Retry\nMake changes...\n+\n/\n✦ 4.9k words\nSign in to Magic Patterns\n\nWelcome back! Please sign in to continue.\n\nContinue with Google\nContinue with Github\nContinue with Figma\nContinue with SAML SSO\nor\nContinue with Email\nDon't have an account? Sign up."
+  }
+]
