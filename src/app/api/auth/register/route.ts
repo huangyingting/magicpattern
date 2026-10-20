@@ -6,8 +6,24 @@ import {
   createDatabaseSession,
   setDatabaseSessionCookie,
 } from '@/lib/account-admission';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function POST(request: Request) {
+  const rl = checkRateLimit(`register:${getClientIp(request)}`, 20, 60_000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { ok: false, code: 'rate_limited', error: 'Too many registration attempts. Please try again shortly.' },
+      {
+        status: 429,
+        headers: {
+          'Retry-After': String(rl.retryAfterSeconds),
+          'X-RateLimit-Limit': String(rl.limit),
+          'X-RateLimit-Remaining': '0',
+        },
+      }
+    );
+  }
+
   try {
     const body = await request.json();
     const invitationToken = body.invitationToken ? String(body.invitationToken).trim() : '';

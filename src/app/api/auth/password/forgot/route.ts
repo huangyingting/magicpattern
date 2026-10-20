@@ -4,8 +4,17 @@ import {
   accountAdmissionSecretLink,
   requestPasswordReset,
 } from '@/lib/account-admission';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function POST(request: Request) {
+  const rl = checkRateLimit(`forgot-pwd:${getClientIp(request)}`, 15, 60_000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { ok: false, code: 'rate_limited', error: 'Too many password reset requests.' },
+      { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+    );
+  }
+
   try {
     const body = await request.json().catch(() => ({}));
     const email = String(body.email || '').trim();

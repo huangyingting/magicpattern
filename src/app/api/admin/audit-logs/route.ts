@@ -1,12 +1,27 @@
 import { NextResponse } from 'next/server';
 import { getAuthenticatedActor } from '@/lib/api-auth';
 import { prisma } from '@/lib/prisma';
+import { recordAuditLog } from '@/lib/audit';
 
 export async function GET(request: Request) {
   try {
     const actor = await getAuthenticatedActor();
     if (!actor) {
       return NextResponse.json({ ok: false, error: 'Authentication required.' }, { status: 401 });
+    }
+    if (actor.role !== 'Admin') {
+      await recordAuditLog({
+        workspaceId: actor.workspaceId,
+        actorId: actor.id,
+        actorEmail: actor.email,
+        action: 'rbac.denied',
+        targetType: 'audit_logs',
+        metadata: { role: actor.role },
+      });
+      return NextResponse.json(
+        { ok: false, error: 'Only Admins can inspect security audit logs.' },
+        { status: 403 }
+      );
     }
 
     const { searchParams } = new URL(request.url);

@@ -1,7 +1,16 @@
 import { NextResponse } from 'next/server';
 import { AccountAdmissionError, resetPassword } from '@/lib/account-admission';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function POST(request: Request) {
+  const rl = checkRateLimit(`reset-pwd:${getClientIp(request)}`, 20, 60_000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { ok: false, code: 'rate_limited', error: 'Too many password reset attempts.' },
+      { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+    );
+  }
+
   try {
     const body = await request.json().catch(() => ({}));
     const token = String(body.token || '').trim();

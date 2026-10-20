@@ -173,6 +173,16 @@ export async function POST(request: Request) {
       data: { freeCreditsUsed: { increment: 1 } },
     }).catch(() => null);
 
+    await prisma.creditTransaction.create({
+      data: {
+        workspaceId: actor.workspaceId,
+        actorEmail: actor.email,
+        actionType: 'project.create',
+        creditsDelta: -1,
+        description: `Created ${type === 'SLIDE_DECK' ? 'Slide Deck' : 'AI Design'}: ${created.name}`,
+      },
+    }).catch(() => null);
+
     await prisma.user.update({
       where: { id: actor.id },
       data: { tokensUsed: { increment: 2450 } },

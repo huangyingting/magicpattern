@@ -4,6 +4,7 @@ export * from './tokens';
 export * from './passwords';
 export * from './session';
 export * from './credentials';
+export * from './outbox';
 export * from './bootstrap';
 export * from './invitations';
 export * from './registration';

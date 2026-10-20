@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getAuthenticatedActor } from '@/lib/api-auth';
 import { prisma } from '@/lib/prisma';
+import { recordAuditLog } from '@/lib/audit';
+import { callLlmCompletion } from '@/lib/production-engine/ai-provider';
 
 export async function GET(
   _request: Request,
@@ -56,6 +58,11 @@ export async function PATCH(
       const promptText = body.prompt.trim();
       const newNodeId = `node_var_${Date.now()}`;
       const newY = 90 + (nodes.filter((n: { type: string }) => n.type === 'ui_variant').length * 175);
+      const llmSummary = await callLlmCompletion(
+        'You are MagicOS spatial canvas architect. Summarize in 1 concise sentence the UI variant synthesized on the canvas.',
+        `Canvas: ${existing.name}. Prompt: ${promptText}`,
+        3500
+      );
       nodes.push({
         id: newNodeId,
         type: 'ui_variant',
@@ -78,10 +85,24 @@ export async function PATCH(
         {
           id: `tr_${Date.now()}_a`,
           role: 'assistant',
-          text: `Synthesized new interactive UI variant "${promptText.slice(0, 32)}" on the canvas and wired it to your MCP coding agents.`,
+          text: llmSummary.ok
+            ? llmSummary.text
+            : `Synthesized new interactive UI variant "${promptText.slice(0, 32)}" on the canvas and wired it to your MCP coding agents.`,
           createdAt: new Date().toISOString(),
         }
       );
+
+      await prisma.creditTransaction
+        .create({
+          data: {
+            workspaceId: actor.workspaceId,
+            actorEmail: actor.email,
+            actionType: 'magicos.variant.synthesize',
+            creditsDelta: -1,
+            description: `MagicOS variant synthesis: ${promptText.slice(0, 48)}`,
+          },
+        })
+        .catch(() => null);
     }
 
     const updated = await prisma.canvasProject.update({
@@ -108,5 +129,47 @@ export async function PATCH(
     });
   } catch (error) {
     return NextResponse.json({ ok: false, error: 'Failed to update canvas.' }, { status: 500 });
+  }
+}
+
+export async function DELETE(
+  _request: Request,
+  context: { params: Promise<{ id: string }> }
+) {
+  try {
+    const actor = await getAuthenticatedActor();
+    if (!actor) {
+      return NextResponse.json({ ok: false, error: 'Authentication required.' }, { status: 401 });
+    }
+    if (actor.role === 'Viewer') {
+      await recordAuditLog({
+        workspaceId: actor.workspaceId,
+        actorId: actor.id,
+        actorEmail: actor.email,
+        action: 'rbac.denied',
+        targetType: 'canvas',
+        metadata: { role: actor.role },
+      });
+      return NextResponse.json(
+        { ok: false, error: 'Viewers cannot delete MagicOS canvases.' },
+        { status: 403 }
+      );
+    }
+
+    const { id } = await context.params;
+    await prisma.canvasProject.delete({ where: { id } });
+
+    await recordAuditLog({
+      workspaceId: actor.workspaceId,
+      actorId: actor.id,
+      actorEmail: actor.email,
+      action: 'canvas.delete',
+      targetType: 'canvas',
+      targetId: id,
+    });
+
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json({ ok: false, error: 'Failed to delete canvas.' }, { status: 500 });
   }
 }

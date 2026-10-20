@@ -8,6 +8,7 @@ import {
   type AccountRole,
 } from './policy';
 import { createOpaqueToken, hashOpaqueToken } from './tokens';
+import { processEmailOutbox } from './outbox';
 
 const DEFAULT_INVITATION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -183,6 +184,8 @@ export async function createAccountInvitation(
         expiresAt: invitation.expiresAt,
       },
     });
+
+    await processEmailOutbox(5).catch(() => null);
 
     await prisma.auditLog.create({
       data: {

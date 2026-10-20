@@ -32,9 +32,16 @@ interface ProjectItem {
   updatedAt: string;
 }
 
+interface CanvasItem {
+  id: string;
+  name: string;
+  updatedAt: string;
+}
+
 export default function FilesPage() {
   const [folders, setFolders] = useState<FolderItem[]>([]);
   const [projects, setProjects] = useState<ProjectItem[]>([]);
+  const [canvases, setCanvases] = useState<CanvasItem[]>([]);
   const [selectedFolderId, setSelectedFolderId] = useState<string>('');
   const [activeTab, setActiveTab] = useState<'ALL' | 'DESIGNS' | 'CANVAS' | 'TEMPLATES'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
@@ -44,16 +51,18 @@ export default function FilesPage() {
   const [newFolderColor, setNewFolderColor] = useState('#4F46E5');
 
   const loadFiles = async () => {
-    const [fldRes, prjRes] = await Promise.all([
+    const [fldRes, prjRes, cnvRes] = await Promise.all([
       fetch('/api/folders').then((r) => r.json()),
       fetch(
         `/api/projects?q=${encodeURIComponent(searchQuery)}${
           selectedFolderId ? `&folderId=${selectedFolderId}` : ''
         }`
       ).then((r) => r.json()),
+      fetch('/api/canvases').then((r) => r.json()).catch(() => ({ ok: false })),
     ]);
     if (fldRes.ok) setFolders(fldRes.folders);
     if (prjRes.ok) setProjects(prjRes.projects);
+    if (cnvRes.ok && Array.isArray(cnvRes.canvases)) setCanvases(cnvRes.canvases);
   };
 
   useEffect(() => {
@@ -81,11 +90,26 @@ export default function FilesPage() {
     loadFiles();
   };
 
-  const displayedProjects = projects.filter((p) => {
-    if (activeTab === 'DESIGNS') return p.type === 'DESIGN';
-    if (activeTab === 'TEMPLATES') return p.isTemplate;
-    return true;
-  });
+  const handleDeleteCanvas = async (id: string) => {
+    await fetch(`/api/canvases/${id}`, { method: 'DELETE' });
+    loadFiles();
+  };
+
+  const displayedProjects =
+    activeTab === 'CANVAS'
+      ? []
+      : projects.filter((p) => {
+          if (activeTab === 'DESIGNS') return p.type === 'DESIGN';
+          if (activeTab === 'TEMPLATES') return p.isTemplate;
+          return true;
+        });
+
+  const displayedCanvases =
+    activeTab === 'ALL' || activeTab === 'CANVAS'
+      ? canvases.filter((c) =>
+          searchQuery ? c.name.toLowerCase().includes(searchQuery.toLowerCase()) : true
+        )
+      : [];
 
   return (
     <WorkspaceShell>
@@ -226,6 +250,46 @@ export default function FilesPage() {
                   onClick={() => handleDeleteProject(p.id)}
                   className="p-1.5 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600"
                   title="Delete project"
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          ))}
+
+          {displayedCanvases.map((c) => (
+            <div
+              key={c.id}
+              data-testid={`canvas-file-${c.id}`}
+              className="bg-white border border-slate-200 rounded-2xl p-4 flex items-center justify-between hover:border-indigo-300 transition shadow-2xs"
+            >
+              <div className="min-w-0 pr-3">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700">
+                    MagicOS
+                  </span>
+                  <Link
+                    href={`/os/${c.id}`}
+                    className="text-xs font-bold text-slate-900 hover:text-indigo-600 block truncate"
+                  >
+                    {c.name}
+                  </Link>
+                </div>
+                <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                  Infinite Spatial Context Canvas
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5 shrink-0">
+                <Link
+                  href={`/os/${c.id}`}
+                  className="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-[11px] font-semibold text-indigo-700"
+                >
+                  Open Canvas
+                </Link>
+                <button
+                  onClick={() => handleDeleteCanvas(c.id)}
+                  className="p-1.5 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600"
+                  title="Delete canvas"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>

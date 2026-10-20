@@ -87,14 +87,32 @@ export async function POST(
 
     const nextVerNumber = versions.length + 1;
 
-    // Update main screen HTML preview dynamically
-    const updatedHtml = buildRevenueCardHtml({
-      darkMode: isDark,
-      showComparison: isComparison || true,
-      showPlanBreakdown: isBreakdown,
-      accentColor: project.thumbnailAccent,
-      headlineTitle: project.name,
-    });
+    // Update main screen HTML preview dynamically while preserving archetype
+    const existingHtml = screens[0]?.htmlPreview || '';
+    const isRevenueArchetype =
+      existingHtml.includes('Total Recurring Revenue') ||
+      project.name.toLowerCase().includes('revenue') ||
+      project.prompt.toLowerCase().includes('revenue');
+
+    const updatedHtml = isRevenueArchetype
+      ? buildRevenueCardHtml({
+          darkMode: isDark,
+          showComparison: isComparison || true,
+          showPlanBreakdown: isBreakdown,
+          accentColor: project.thumbnailAccent,
+          headlineTitle: project.name,
+        })
+      : existingHtml
+      ? isDark
+        ? existingHtml.replace('bg-slate-50', 'bg-slate-950 text-slate-100')
+        : existingHtml
+      : buildRevenueCardHtml({
+          darkMode: isDark,
+          showComparison: isComparison || true,
+          showPlanBreakdown: isBreakdown,
+          accentColor: project.thumbnailAccent,
+          headlineTitle: project.name,
+        });
 
     if (screens.length > 0) {
       screens[0] = {
@@ -199,6 +217,16 @@ export async function POST(
     await prisma.workspace.update({
       where: { id: actor.workspaceId },
       data: { freeCreditsUsed: { increment: 1 } },
+    }).catch(() => null);
+
+    await prisma.creditTransaction.create({
+      data: {
+        workspaceId: actor.workspaceId,
+        actorEmail: actor.email,
+        actionType: 'project.prompt',
+        creditsDelta: -1,
+        description: `AI prompt on ${project.name}: ${(command ? `/${command} ` : '') + promptText}`.slice(0, 120),
+      },
     }).catch(() => null);
 
     return NextResponse.json({

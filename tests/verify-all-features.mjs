@@ -417,6 +417,9 @@ async function runVerification() {
     });
     assert.equal(viewerInviteRes.status(), 403);
 
+    const viewerAuditReadRes = await viewerPage.request.get(`${BASE_URL}/api/admin/audit-logs`);
+    assert.equal(viewerAuditReadRes.status(), 403);
+
     // 18. Single-Use Password Reset Lifecycle (/forgot-password & /reset-password/[token])
     const forgotRes = await viewerPage.request.post(`${BASE_URL}/api/auth/password/forgot`, {
       data: { email: viewerEmail },
@@ -443,7 +446,41 @@ async function runVerification() {
       'Verified 403 on Viewer mutations and 410 on password reset token replay'
     );
 
-    // 19. Verify Immutable Audit Logs API (/api/admin/audit-logs)
+    // 19. Model Context Protocol (MCP) JSON-RPC 2.0 Server (/api/mcp) & Credit Ledger
+    const mcpInitRes = await page.request.post(`${BASE_URL}/api/mcp`, {
+      headers: { Authorization: `Bearer ${rawBearerKey}` },
+      data: { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },
+    });
+    assert.equal(mcpInitRes.status(), 200);
+    const mcpInitData = await mcpInitRes.json();
+    assert.equal(mcpInitData.result.serverInfo.name, 'magicpatterns-mcp-server');
+
+    const mcpCallRes = await page.request.post(`${BASE_URL}/api/mcp`, {
+      headers: { Authorization: `Bearer ${rawBearerKey}` },
+      data: {
+        jsonrpc: '2.0',
+        id: 2,
+        method: 'tools/call',
+        params: { name: 'get_design_system_tokens', arguments: {} },
+      },
+    });
+    assert.equal(mcpCallRes.status(), 200);
+    const mcpCallData = await mcpCallRes.json();
+    assert.ok(mcpCallData.result.content[0].text.includes('colors'));
+
+    const settingsLedgerRes = await page.request.get(`${BASE_URL}/api/settings`);
+    const settingsLedgerData = await settingsLedgerRes.json();
+    assert.ok(
+      Array.isArray(settingsLedgerData.creditTransactions) &&
+        settingsLedgerData.creditTransactions.length >= 2,
+      'Expected recorded CreditTransaction ledger entries'
+    );
+    recordPass(
+      'Model Context Protocol (MCP) JSON-RPC 2.0 Server (/api/mcp) & Credit Ledger',
+      `Verified MCP initialize + tools/call and ${settingsLedgerData.creditTransactions.length} CreditTransaction entries`
+    );
+
+    // 20. Verify Immutable Audit Logs API (/api/admin/audit-logs)
     const auditRes = await page.request.get(`${BASE_URL}/api/admin/audit-logs`);
     assert.equal(auditRes.status(), 200);
     const auditData = await auditRes.json();

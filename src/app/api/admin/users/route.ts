@@ -9,6 +9,12 @@ export async function GET() {
     if (!actor) {
       return NextResponse.json({ ok: false, error: 'Authentication required.' }, { status: 401 });
     }
+    if (actor.role === 'Viewer') {
+      return NextResponse.json(
+        { ok: false, error: 'Viewers cannot list administrative user records.' },
+        { status: 403 }
+      );
+    }
 
     const users = await prisma.user.findMany({
       orderBy: { createdAt: 'asc' },

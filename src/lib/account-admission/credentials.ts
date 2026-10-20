@@ -5,6 +5,7 @@ import { createDatabaseSession } from './session';
 import { normalizeAccountEmail } from './policy';
 import { hashPassword, verifyPassword } from './passwords';
 import { createOpaqueToken, hashOpaqueToken } from './tokens';
+import { processEmailOutbox } from './outbox';
 
 const PASSWORD_RESET_TTL_MS = 60 * 60 * 1000;
 const DUMMY_PASSWORD_HASH =
@@ -66,6 +67,20 @@ export async function requestPasswordReset(email: string) {
       resetExpiresAt: expiresAt,
     },
   });
+
+  await prisma.accountEmailOutbox.create({
+    data: {
+      payload: JSON.stringify({
+        type: 'password_reset',
+        email: user.email,
+        expiresAt: expiresAt.toISOString(),
+      }),
+      status: 'pending',
+      expiresAt,
+    },
+  });
+
+  await processEmailOutbox(5).catch(() => null);
 
   await recordAuditLog({
     actorId: user.id,

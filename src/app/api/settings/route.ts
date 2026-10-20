@@ -11,7 +11,7 @@ export async function GET() {
       return NextResponse.json({ ok: false, error: 'Authentication required.' }, { status: 401 });
     }
 
-    const [workspace, user, members, integrationKeys, connectors, skills, apiKeys, projectsCount] =
+    const [workspace, user, members, integrationKeys, connectors, skills, apiKeys, projectsCount, creditTransactions] =
       await Promise.all([
         prisma.workspace.findUnique({ where: { id: actor.workspaceId } }),
         prisma.user.findUnique({ where: { id: actor.id } }),
@@ -37,6 +37,11 @@ export async function GET() {
           orderBy: { createdAt: 'desc' },
         }),
         prisma.designProject.count({ where: { workspaceId: actor.workspaceId } }),
+        prisma.creditTransaction.findMany({
+          where: { workspaceId: actor.workspaceId },
+          orderBy: { createdAt: 'desc' },
+          take: 50,
+        }),
       ]);
 
     return NextResponse.json({
@@ -91,6 +96,14 @@ export async function GET() {
         status: 'ACTIVE',
         lastUsedAt: k.lastUsedAt ? k.lastUsedAt.toISOString() : null,
         createdAt: k.createdAt.toISOString(),
+      })),
+      creditTransactions: creditTransactions.map((tx) => ({
+        id: tx.id,
+        actorEmail: tx.actorEmail,
+        actionType: tx.actionType,
+        creditsDelta: tx.creditsDelta,
+        description: tx.description,
+        createdAt: tx.createdAt.toISOString(),
       })),
     });
   } catch (error) {
@@ -167,6 +180,15 @@ export async function POST(request: Request) {
             freeCreditsQuota: { increment: 25 },
           },
         });
+        await prisma.creditTransaction.create({
+          data: {
+            workspaceId: actor.workspaceId,
+            actorEmail: actor.email,
+            actionType: 'credits.claim_free',
+            creditsDelta: 25,
+            description: 'Claimed +25 free promotional workspace credits',
+          },
+        }).catch(() => null);
         return NextResponse.json({ ok: true, workspace: updated });
       }
 
@@ -178,6 +200,15 @@ export async function POST(request: Request) {
             purchasedCredits: { increment: amount },
           },
         });
+        await prisma.creditTransaction.create({
+          data: {
+            workspaceId: actor.workspaceId,
+            actorEmail: actor.email,
+            actionType: 'credits.purchase',
+            creditsDelta: amount,
+            description: `Purchased +${amount} on-demand AI generation credits`,
+          },
+        }).catch(() => null);
         return NextResponse.json({ ok: true, workspace: updated });
       }
 

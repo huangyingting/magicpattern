@@ -12,6 +12,12 @@ export async function GET() {
     if (!actor) {
       return NextResponse.json({ ok: false, error: 'Authentication required.' }, { status: 401 });
     }
+    if (actor.role === 'Viewer') {
+      return NextResponse.json(
+        { ok: false, error: 'Viewers cannot inspect workspace invitations.' },
+        { status: 403 }
+      );
+    }
 
     const invitations = await listAccountInvitations();
     const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';

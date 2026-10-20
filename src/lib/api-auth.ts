@@ -33,13 +33,21 @@ export async function getAuthenticatedActor(): Promise<SessionActor | null> {
         const apiKey = await prisma.workspaceApiKey.findFirst({
           where: { keyHash },
         });
-        if (apiKey) {
-          await prisma.workspaceApiKey.update({
-            where: { id: apiKey.id },
-            data: { lastUsedAt: new Date() },
-          });
-          const keyOwner = apiKey.createdById
-            ? await prisma.user.findUnique({ where: { id: apiKey.createdById } })
+        const integrationKey = !apiKey
+          ? await prisma.workspaceIntegrationKey.findFirst({
+              where: { keyHash },
+            })
+          : null;
+        const matchedKey = apiKey || integrationKey;
+        if (matchedKey) {
+          if (apiKey) {
+            await prisma.workspaceApiKey.update({
+              where: { id: apiKey.id },
+              data: { lastUsedAt: new Date() },
+            });
+          }
+          const keyOwner = matchedKey.createdById
+            ? await prisma.user.findUnique({ where: { id: matchedKey.createdById } })
             : await prisma.user.findFirst({
                 where: { status: 'active' },
                 orderBy: { createdAt: 'asc' },
@@ -51,7 +59,7 @@ export async function getAuthenticatedActor(): Promise<SessionActor | null> {
               name: keyOwner.name || keyOwner.email,
               role: normalizeRole(keyOwner.role),
               status: keyOwner.status,
-              workspaceId: apiKey.workspaceId,
+              workspaceId: matchedKey.workspaceId,
               authMethod: 'api_key',
             };
           }
