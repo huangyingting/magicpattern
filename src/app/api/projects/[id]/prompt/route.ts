@@ -8,6 +8,7 @@ import {
   ProjectVersion,
   VirtualFile,
 } from '@/lib/ai-engine';
+import { callLlmCompletion } from '@/lib/production-engine/ai-provider';
 
 export async function POST(
   request: Request,
@@ -132,10 +133,18 @@ export async function POST(
       createdAt: new Date().toISOString(),
     };
 
+    const llmRes = await callLlmCompletion(
+      'You are Magic Patterns AI Design Co-Pilot. Summarize in 1 concise sentence the UI and Tailwind CSS refinements applied to the component.',
+      `Project: ${project.name}. User command/prompt: ${command ? `/${command} ` : ''}${promptText}`,
+      4500
+    );
+
     const assistantMsg: ChatMessage = {
       id: `msg_${Date.now()}_a`,
       role: 'assistant',
-      content: command
+      content: llmRes.ok
+        ? llmRes.text
+        : command
         ? `Executed **/${command}** workflow and updated **${project.name}** (Version ${nextVerNumber}):`
         : `Updated **${project.name}** based on your prompt (Version ${nextVerNumber}):`,
       thoughtSeconds: 4,

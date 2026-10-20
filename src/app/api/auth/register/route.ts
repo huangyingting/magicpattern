@@ -3,6 +3,8 @@ import {
   AccountAdmissionError,
   registerWithInvitation,
   beginPublicRegistration,
+  createDatabaseSession,
+  setDatabaseSessionCookie,
 } from '@/lib/account-admission';
 
 export async function POST(request: Request) {
@@ -25,13 +27,16 @@ export async function POST(request: Request) {
       token: invitationToken,
     });
 
-    return NextResponse.json({
+    const dbSession = await createDatabaseSession(result.user.id);
+    const response = NextResponse.json({
       ok: true,
       status: 'active',
       userId: result.user.id,
       email: result.user.email,
       role: result.user.role,
     });
+    setDatabaseSessionCookie(response, dbSession);
+    return response;
   } catch (error) {
     if (error instanceof AccountAdmissionError) {
       return NextResponse.json(

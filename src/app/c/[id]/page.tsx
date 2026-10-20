@@ -170,6 +170,22 @@ export default function StudioEditorPage() {
       if (e.data.type === 'MP_CANVAS_COMMENT_CLICK') {
         setPendingPin({ x: e.data.x, y: e.data.y });
       }
+      if (e.data.type === 'MP_HTML_UPDATED' && typeof e.data.html === 'string') {
+        setProject((prev) => {
+          if (!prev || prev.screens.length === 0) return prev;
+          const updatedScreens = [...prev.screens];
+          updatedScreens[0] = {
+            ...updatedScreens[0],
+            htmlPreview: `<!DOCTYPE html>\n${e.data.html}`,
+          };
+          fetch(`/api/projects/${prev.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ screens: updatedScreens }),
+          }).catch(() => null);
+          return { ...prev, screens: updatedScreens };
+        });
+      }
     };
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
@@ -235,7 +251,7 @@ export default function StudioEditorPage() {
     }
   };
 
-  const handleApplyVisualEdit = () => {
+  const handleApplyVisualEdit = async () => {
     if (!selectedElement || !iframeRef.current?.contentWindow) return;
     iframeRef.current.contentWindow.postMessage(
       {
@@ -328,17 +344,11 @@ export default function StudioEditorPage() {
 
   const handleDownloadCodeBundle = () => {
     if (!project) return;
-    const bundleText = Object.values(project.files)
-      .map((f) => `// === FILE: ${f.path} ===\n${f.content}\n`)
-      .join('\n');
-    const blob = new Blob([bundleText], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `${project.shareSlug}-source.txt`;
+    a.href = `/api/projects/${project.id}/export`;
+    a.download = `${project.shareSlug}.zip`;
     a.click();
-    URL.revokeObjectURL(url);
-    showToast('Downloaded project source bundle');
+    showToast('Downloaded project ZIP archive');
   };
 
   if (!project) {

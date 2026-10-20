@@ -24,6 +24,14 @@ export async function GET(
       return NextResponse.json({ ok: false, error: 'Project not found.' }, { status: 404 });
     }
 
+    const actor = await getAuthenticatedActor();
+    if (!actor && project.publicPermission === 'NO_ACCESS') {
+      return NextResponse.json(
+        { ok: false, error: 'Public access is disabled for this project.' },
+        { status: 403 }
+      );
+    }
+
     return NextResponse.json({
       ok: true,
       project: {

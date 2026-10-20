@@ -324,12 +324,131 @@ async function runVerification() {
       'Mobile drawer navigation & responsive grids verified'
     );
 
-    // 14. Verify Immutable Audit Logs API (/api/admin/audit-logs)
+    // 14. Production Healthcheck Endpoint (/api/health)
+    const healthRes = await page.request.get(`${BASE_URL}/api/health`);
+    assert.equal(healthRes.status(), 200);
+    const healthData = await healthRes.json();
+    assert.equal(healthData.ok, true);
+    assert.equal(healthData.database, 'connected');
+    recordPass(
+      'Production Healthcheck (/api/health)',
+      `status=${healthData.status}, aiProvider=${healthData.aiProvider.provider} (${healthData.aiProvider.model})`
+    );
+
+    // 15. Real Project ZIP Archive Export (/api/projects/[id]/export)
+    const firstProjectId = projectsData.projects[0].id;
+    const zipRes = await page.request.get(`${BASE_URL}/api/projects/${firstProjectId}/export`);
+    assert.equal(zipRes.status(), 200);
+    assert.equal(zipRes.headers()['content-type'], 'application/zip');
+    const zipBody = await zipRes.body();
+    assert.equal(zipBody[0], 0x50, 'ZIP magic byte P');
+    assert.equal(zipBody[1], 0x4b, 'ZIP magic byte K');
+    recordPass(
+      'Project ZIP Archive Export (/api/projects/[id]/export)',
+      `Downloaded valid ZIP archive (${zipBody.length} bytes)`
+    );
+
+    // 16. Programmatic REST API Key Bearer Authentication + Unauthenticated 401 Gate + Middleware Redirect
+    const apiKeyCreateRes = await page.request.post(`${BASE_URL}/api/settings`, {
+      data: { section: 'api-keys', name: 'E2E Bearer Test Key' },
+    });
+    const apiKeyCreateData = await apiKeyCreateRes.json();
+    const rawBearerKey = apiKeyCreateData.rawKey;
+    assert.ok(rawBearerKey.startsWith('mp_live_'));
+
+    const anonContext = await browser.newContext();
+    const anonPage = await anonContext.newPage();
+
+    // Unauthenticated API request must return 401
+    const anonApiRes = await anonPage.request.get(`${BASE_URL}/api/projects`);
+    assert.equal(anonApiRes.status(), 401, 'Unauthenticated /api/projects must return 401');
+
+    // Unauthenticated browser navigation to /dashboard must redirect to /login
+    await anonPage.goto(`${BASE_URL}/dashboard`, { waitUntil: 'networkidle' });
+    assert.ok(anonPage.url().includes('/login'), 'Unauthenticated /dashboard must redirect to /login');
+
+    // Bearer API key request from unauthenticated context must succeed with 200
+    const bearerRes = await anonPage.request.get(`${BASE_URL}/api/projects`, {
+      headers: { Authorization: `Bearer ${rawBearerKey}` },
+    });
+    assert.equal(bearerRes.status(), 200, 'Valid Bearer mp_live_ key must authenticate');
+    await anonContext.close();
+    recordPass(
+      'Unauthenticated 401 Gate, Middleware Redirect & Bearer API Key Auth',
+      `Verified 401 on anonymous API, /login redirect, and 200 with Bearer ${rawBearerKey.slice(0, 14)}...`
+    );
+
+    // 17. Viewer Role RBAC Enforcement (403 Forbidden on Mutations)
+    const viewerEmail = `viewer-${Date.now()}@magicpatterns.dev`;
+    const viewerInvRes = await page.request.post(`${BASE_URL}/api/admin/invitations`, {
+      data: { email: viewerEmail, role: 'Viewer', ttlHours: 24 },
+    });
+    const viewerInvData = await viewerInvRes.json();
+    const viewerContext = await browser.newContext();
+    const viewerPage = await viewerContext.newPage();
+
+    const viewerRegRes = await viewerPage.request.post(`${BASE_URL}/api/auth/register`, {
+      data: {
+        email: viewerEmail,
+        name: 'Read Only Viewer',
+        password: 'ViewerPassword123!',
+        invitationToken: viewerInvData.rawToken,
+      },
+    });
+    assert.equal(viewerRegRes.status(), 200);
+
+    // Viewer can read projects (200)
+    const viewerReadRes = await viewerPage.request.get(`${BASE_URL}/api/projects`);
+    assert.equal(viewerReadRes.status(), 200);
+
+    // Viewer cannot create projects (403), mutate workspace settings (403), or create invitations (403)
+    const viewerCreateProj = await viewerPage.request.post(`${BASE_URL}/api/projects`, {
+      data: { prompt: 'Unauthorized viewer project' },
+    });
+    assert.equal(viewerCreateProj.status(), 403);
+
+    const viewerMutateSettings = await viewerPage.request.post(`${BASE_URL}/api/settings`, {
+      data: { section: 'workspace', name: 'Hacked Workspace Name' },
+    });
+    assert.equal(viewerMutateSettings.status(), 403);
+
+    const viewerInviteRes = await viewerPage.request.post(`${BASE_URL}/api/admin/invitations`, {
+      data: { email: 'another@magicpatterns.dev', role: 'Editor' },
+    });
+    assert.equal(viewerInviteRes.status(), 403);
+
+    // 18. Single-Use Password Reset Lifecycle (/forgot-password & /reset-password/[token])
+    const forgotRes = await viewerPage.request.post(`${BASE_URL}/api/auth/password/forgot`, {
+      data: { email: viewerEmail },
+    });
+    assert.equal(forgotRes.status(), 200);
+    const forgotData = await forgotRes.json();
+    assert.ok(forgotData.resetToken, 'Expected single-use reset token');
+
+    await viewerPage.goto(`${BASE_URL}/reset-password/${forgotData.resetToken}`, {
+      waitUntil: 'networkidle',
+    });
+    await viewerPage.getByTestId('reset-password-input').fill('NewViewerPass456!');
+    await viewerPage.getByTestId('reset-submit-btn').click();
+    await viewerPage.getByTestId('reset-success-banner').waitFor({ state: 'visible' });
+
+    // Replaying the same reset token must fail with 410 Gone
+    const replayReset = await viewerPage.request.post(`${BASE_URL}/api/auth/password/reset`, {
+      data: { token: forgotData.resetToken, password: 'ReplayPassword789!' },
+    });
+    assert.equal(replayReset.status(), 410);
+    await viewerContext.close();
+    recordPass(
+      'Viewer RBAC 403 Enforcement & Single-Use Password Reset Lifecycle',
+      'Verified 403 on Viewer mutations and 410 on password reset token replay'
+    );
+
+    // 19. Verify Immutable Audit Logs API (/api/admin/audit-logs)
     const auditRes = await page.request.get(`${BASE_URL}/api/admin/audit-logs`);
     assert.equal(auditRes.status(), 200);
     const auditData = await auditRes.json();
     assert.equal(auditData.ok, true);
-    assert.ok(auditData.logs.length >= 5, 'Expected audit log entries for invitations and API keys');
+    assert.ok(auditData.logs.length >= 10, 'Expected audit log entries for invitations, RBAC, export, and password reset');
     recordPass(
       'Immutable Audit Log Verification (/api/admin/audit-logs)',
       `${auditData.logs.length} audit events recorded`

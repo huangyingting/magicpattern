@@ -342,9 +342,33 @@ export default function SettingsTabPage() {
                       <td className="py-3 pr-4 font-bold text-slate-900">{m.name}</td>
                       <td className="py-3 pr-4 text-slate-600">{m.email}</td>
                       <td className="py-3 pr-4">
-                        <span className="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-semibold">
-                          {m.role}
-                        </span>
+                        {user.role === 'Admin' ? (
+                          <select
+                            data-testid={`member-role-select-${m.email}`}
+                            value={m.role}
+                            onChange={async (e) => {
+                              const nextRole = e.target.value;
+                              const res = await fetch('/api/admin/users', {
+                                method: 'PATCH',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ userId: m.userId, role: nextRole }),
+                              });
+                              if (res.ok) {
+                                showToast(`Updated ${m.email} role to ${nextRole}`);
+                                loadSettings();
+                              }
+                            }}
+                            className="px-2.5 py-1 rounded-lg border border-slate-200 bg-indigo-50/60 text-indigo-700 font-semibold text-xs outline-none"
+                          >
+                            <option value="Admin">Admin</option>
+                            <option value="Editor">Editor</option>
+                            <option value="Viewer">Viewer</option>
+                          </select>
+                        ) : (
+                          <span className="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-semibold">
+                            {m.role}
+                          </span>
+                        )}
                       </td>
                       <td className="py-3 text-slate-500">{m.plan}</td>
                     </tr>

@@ -25,6 +25,11 @@ services:
       ACCOUNT_ADMISSION_MODE: "invitation-only"
       ALLOW_CREDENTIAL_REGISTRATION: "true"
       REQUIRE_EMAIL_VERIFICATION: "false"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
 volumes:
   pgdata:

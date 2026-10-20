@@ -109,6 +109,22 @@ export async function POST(request: Request) {
     const body = await request.json();
     const section = String(body.section || '');
 
+    if (actor.role === 'Viewer' && section !== 'profile') {
+      await recordAuditLog({
+        workspaceId: actor.workspaceId,
+        actorId: actor.id,
+        actorEmail: actor.email,
+        action: 'rbac.denied',
+        targetType: 'settings',
+        targetId: section,
+        metadata: { role: actor.role, section },
+      });
+      return NextResponse.json(
+        { ok: false, error: 'Viewers cannot modify workspace settings.' },
+        { status: 403 }
+      );
+    }
+
     // 1. Update Workspace Settings (/settings/workspace)
     if (section === 'workspace') {
       const updated = await prisma.workspace.update({

@@ -7,6 +7,10 @@ export async function GET(
   context: { params: Promise<{ id: string }> }
 ) {
   try {
+    const actor = await getAuthenticatedActor();
+    if (!actor) {
+      return NextResponse.json({ ok: false, error: 'Authentication required.' }, { status: 401 });
+    }
     const { id } = await context.params;
     const canvas = await prisma.canvasProject.findUnique({ where: { id } });
     if (!canvas) {

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAuthenticatedActor } from '@/lib/api-auth';
 import { prisma } from '@/lib/prisma';
+import { extractDesignTokensFromSource } from '@/lib/production-engine/live-extractor';
 
 const PRESET_CONFIGS: Record<
   string,
@@ -143,6 +144,14 @@ export async function POST(request: Request) {
     const sourceType = String(body.sourceType || 'preset');
     const sourceUrl = body.sourceUrl ? String(body.sourceUrl) : null;
 
+    const extracted = await extractDesignTokensFromSource(
+      sourceType,
+      sourceUrl,
+      body.colors || preset.colors,
+      body.typography || preset.typography,
+      body.radius ? String(body.radius) : preset.radius
+    );
+
     const created = await prisma.designSystem.create({
       data: {
         workspaceId: actor.workspaceId,
@@ -150,24 +159,20 @@ export async function POST(request: Request) {
         name,
         description,
         sourceType,
-        sourceUrl,
+        sourceUrl: extracted.sourceUrl || sourceUrl,
         presetKey,
         isDefault: Boolean(body.isDefault),
-        colorsJson: JSON.stringify(body.colors || preset.colors),
-        typographyJson: JSON.stringify(body.typography || preset.typography),
-        radius: body.radius ? String(body.radius) : preset.radius,
-        customCss: body.customCss ? String(body.customCss) : preset.customCss,
-        componentsJson: JSON.stringify([
-          { name: 'Button', variants: ['Primary', 'Secondary', 'Ghost'], status: 'Ready' },
-          { name: 'Card', variants: ['Default', 'Interactive'], status: 'Ready' },
-          { name: 'Badge', variants: ['Positive', 'Neutral'], status: 'Ready' },
-          { name: 'Modal', variants: ['Standard', 'Sheet'], status: 'Ready' },
-        ]),
+        colorsJson: JSON.stringify(extracted.colors),
+        typographyJson: JSON.stringify(extracted.typography),
+        radius: extracted.radius,
+        customCss: body.customCss ? String(body.customCss) : extracted.customCss,
+        componentsJson: JSON.stringify(extracted.components),
       },
     });
 
     return NextResponse.json({
       ok: true,
+      extractedLive: extracted.extractedLive,
       designSystem: {
         ...created,
         colors: JSON.parse(created.colorsJson),

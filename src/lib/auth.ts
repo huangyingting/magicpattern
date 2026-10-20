@@ -52,7 +52,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         const valid = await verifyPassword(credentials.password, storedHash);
-        if (!valid && credentials.password !== storedHash) {
+        if (!valid) {
           await recordAuditLog({
             actorId: user.id,
             actorEmail: user.email,

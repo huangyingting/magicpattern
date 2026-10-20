@@ -30,7 +30,20 @@ npm run bootstrap:admin -- --email=admin@magicpatterns.com --password="AdminPass
 
 # 4. Start development server
 npm run dev
+
+# 5. Run the 23-point Playwright E2E verification suite
+npm run test:e2e
 ```
+
+---
+
+## Production Architecture Highlights
+
+- **Strict Authentication & API Key Governance**: Every protected route and API endpoint requires a valid NextAuth JWT session, database session cookie, or `Authorization: Bearer mp_live_...` Workspace API Key (no anonymous fallbacks). Unauthenticated browsers are redirected to `/login` via Next.js Middleware (`src/middleware.ts`).
+- **Invite-Only Registration & Cryptographic Password Reset**: Single-use SHA-256 hashed invitation tokens (`AccountInvitation`) and password reset tokens (`PasswordResetToken`) with rotation, revocation, expiry, and `410 Gone` replay protection.
+- **Role-Based Access Control (RBAC)**: Strict enforcement of `Admin`, `Editor`, and `Viewer` permissions across all mutation endpoints with immutable `AuditLog` tracking (`rbac.denied`, `invite.*`, `user.role_change`, `project.export.zip`, `auth.password_reset.*`).
+- **Live AI Provider & Token Extractor**: Supports Azure OpenAI (`AZURE_OPENAI_*`), OpenAI (`OPENAI_API_KEY`), and Anthropic (`ANTHROPIC_API_KEY`) with automatic high-speed deterministic synthesis fallback (`src/lib/production-engine/ai-provider.ts`) and live Website/GitHub CSS token extraction (`src/lib/production-engine/live-extractor.ts`).
+- **Pure Node.js ZIP Archive Export & Healthcheck**: `GET /api/projects/[id]/export` streams standard CRC-32 `.zip` archives of generated React/Tailwind code; `GET /api/health` reports live DB latency, workspace counts, admission policy, and active LLM provider status.
 
 ---
 
